@@ -1,0 +1,258 @@
+@import url("http://fonts.googleapis.com/css?family=Raleway");
+@import url("http://fonts.googleapis.com/css?family=Oswald");
+
+@font-face{
+    font-family: "gotham light";
+    src: url('font/Gotham-Light.otf'),
+    url('font/Gotham-Light.otf'); /* IE */
+}
+
+@font-face{
+    font-family: "gotham medium";
+    src: url('font/Gotham-Medium.otf'),
+    url('font/Gotham-Medium.otf'); /* IE */
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  background: #c4d2df url(../img/cover5.jpg) center center fixed no-repeat;
+  -moz- background-size: cover;
+  background-size: cover;
+  background-position: top;
+  opacity: 1;
+}
+
+.show{
+  opacity: 1;
+  transition: all .5s ease-in;
+}
+
+.show.hidden{
+  opacity: 0;
+}
+
+a.CoverBtnOriMain:hover{
+  color: white;
+  font-family: gotham light;
+  font-size: 12.5pt;
+  text-decoration: none;
+  box-shadow: 0px 0px 10px #999;
+}
+
+.CoverBtnOriMain{
+  background: #999;
+  padding: 3px 7px;
+  border-radius: 30px;
+  color: white;
+  font-family: gotham light;
+  font-size: 12.5pt;
+  text-decoration: none;
+  box-shadow: 0px 0px 10px #999;
+}
+
+a.CoverBtnOri:hover{
+  background: #999;
+  padding: 3px 7px;
+  border-radius: 30px;
+  color: white;
+  font-family: gotham light;
+  font-size: 12.5pt;
+  text-decoration: none;
+  box-shadow: 0px 0px 10px #999;
+  -o-transition: color .30s ease-in-out;
+  -webkit-transition: color .30s ease-in-out;
+  -moz-transition: color .30s ease-in-out;
+  transition:  color .30s ease-in-out;
+  -o-transition: background .30s ease-in-out;
+  -webkit-transition: background .30s ease-in-out;
+  -moz-transition: background .30s ease-in-out;
+  transition:  background .30s ease-in-out;
+}
+
+.CoverBtnOri{
+  font-family: gotham light;
+  font-size: 12.5pt;
+  color: black;
+}
+
+.col-md-5ths{
+  margin: 18px 0;
+  padding: 0;
+  width: 20%;
+  text-align: center;
+}
+
+.centerBoxPosition{
+  position: absolute;     /*絕對位置*/
+  top: 50%;               /*從上面開始算，下推 50% (一半) 的位置*/
+  left: 50%;              /*從左邊開始算，右推 50% (一半) 的位置*/
+  margin-top: -136px;     /*高度的一半*/
+  margin-left: -250px;    /*寬度的一半*/
+}
+
+.centerBox{
+  background: none;
+  width: 500px;
+  height: 285px;
+  text-align: center;
+
+  border-radius: 10px;
+}
+
+.centerBoxIn{
+  background: none;
+  width: 500px;
+  height: 285px;
+  text-align: center;
+  box-shadow: 0 0 25px #999;
+  border-radius: 10px;
+  transition: all 1s ease;
+}
+
+.contentNull{
+  margin: 0;
+  font-family: gotham light;
+  font-size: 5pt;
+}
+
+.coverContent{
+  padding: 10px;
+  margin:0;
+  color: black;
+  font-family: gotham light;
+  font-size: 12.5pt;
+}
+
+.coverContentMain{
+  margin: 0.5% 0;
+  color: black;
+  font-family: gotham light;
+  font-size: 42pt;
+}
+
+.coverContentIcon{
+  margin: 5% 0 1% 0;
+}
+
+.lowerBoxPosition{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  margin-top: 240px;
+  margin-left: -50%;
+}
+
+.lowerBox{
+  background: none;
+  text-align: center;
+  margin-bottom: 160px;
+}
+
+.collapseBtn{
+  background: none;
+  font-family: gotham light;
+  font-size: 12.5pt;
+  color: black;
+  padding: 3px 7px;
+  border: 1px solid #4f6a87;
+  border-radius: 30px;
+  text-decoration: none;
+}
+
+a.collapseBtn:hover{
+  background: none;
+  font-family: gotham light;
+  font-size: 12.5pt;
+  color: white;
+  padding: 3px 7px;
+  border: 1px solid #4f6a87;
+  border-radius: 30px;
+  text-decoration: none;
+  box-shadow: 0px 0px 10px #999;
+  -o-transition: color .50s ease-in-out;
+  -webkit-transition: color .50s ease-in-out;
+  -moz-transition: color .50s ease-in-out;
+  transition:  color .50s ease-in-out;
+  -o-transition: box-shadow .30s ease-in-out;
+  -webkit-transition: box-shadow .30s ease-in-out;
+  -moz-transition: box-shadow .30s ease-in-out;
+  transition:  box-shadow .30s ease-in-out;
+}
+
+.lowerBG{
+  background: white;
+  box-shadow: 0 0 25px #888888;
+  border-radius: 10px;
+  margin-left: 6%;
+  margin-right: 6%;
+  margin-bottom: 160px;
+}
+
+.lowerContent{
+  margin: 1% 1.5%;
+  font-family: gotham light;
+  font-size: 12.5pt;
+  color: black;
+  line-height: 25pt;
+  text-align: justify;
+}
+
+.bottomBar{
+  position: absolute;
+  background: #999;
+  width: 100%;
+  height: 80px;
+  bottom: 0;
+}
+
+.bottomSign{
+  background: none;
+  color: white;
+  font-family: gotham light;
+  font-size: 9pt;
+  line-height: 80px;
+  text-align: right;
+}
+
+.bottomIconPosition{
+  line-height: 80px;
+  text-align: left;
+}
+
+.bottomIcon1{
+  width: 30px;
+  height: 30px;
+  margin: 0 1% 0 0;
+  opacity: .5;
+}
+
+img.bottomIcon1:hover{
+  width: 30px;
+  height: 30px;
+  margin: 0 1% 0 0;
+  opacity: 1;
+  -o-transition: opacity .30s ease-in-out;
+  -webkit-transition: opacity .30s ease-in-out;
+  -moz-transition: opacity .30s ease-in-out;
+  transition:  opacity .30s ease-in-out;
+}
+
+.bottomIcon2_3{
+  width: 30px;
+  height: 30px;
+  margin: 0 1% 0 1%;
+  opacity: .5;
+}
+
+img.bottomIcon2_3:hover{
+  width: 30px;
+  height: 30px;
+  margin: 0 1% 0 1%;
+  opacity: 1;
+  -o-transition: opacity .30s ease-in-out;
+  -webkit-transition: opacity .30s ease-in-out;
+  -moz-transition: opacity .30s ease-in-out;
+  transition:  opacity .30s ease-in-out;
+}

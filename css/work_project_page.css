@@ -1,0 +1,226 @@
+@import url("http://fonts.googleapis.com/css?family=Raleway");
+@import url("http://fonts.googleapis.com/css?family=Oswald");
+
+@font-face{
+    font-family: "gotham light";
+    src: url('font/Gotham-Light.otf'),
+    url('font/Gotham-Light.otf'); /* IE */
+}
+
+@font-face{
+    font-family: "gotham medium";
+    src: url('font/Gotham-Medium.otf'),
+    url('font/Gotham-Medium.otf'); /* IE */
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  background: #c4d2df url(../img/white_cover.jpg) center center fixed no-repeat;
+  -moz- background-size: cover;
+  background-size: cover;
+  background-position: top;
+  opacity: 1;
+}
+
+a.CoverBtnOriMain:hover{
+  color: white;
+  font-family: gotham light;
+  font-size: 12.5pt;
+  text-decoration: none;
+  box-shadow: 0px 0px 10px #999;
+}
+
+.CoverBtnOriMain{
+  background: #999;
+  padding: 3px 7px;
+  border-radius: 30px;
+  color: white;
+  font-family: gotham light;
+  font-size: 12.5pt;
+  text-decoration: none;
+  box-shadow: 0px 0px 10px #999;
+}
+
+a.CoverBtnOri:hover{
+  background: #999;
+  padding: 3px 7px;
+  border-radius: 30px;
+  color: white;
+  font-family: gotham light;
+  font-size: 12.5pt;
+  text-decoration: none;
+  box-shadow: 0px 0px 10px #999;
+  -o-transition: color .30s ease-in-out;
+  -webkit-transition: color .30s ease-in-out;
+  -moz-transition: color .30s ease-in-out;
+  transition:  color .30s ease-in-out;
+  -o-transition: background .30s ease-in-out;
+  -webkit-transition: background .30s ease-in-out;
+  -moz-transition: background .30s ease-in-out;
+  transition:  background .30s ease-in-out;
+}
+
+.CoverBtnOri{
+  font-family: gotham light;
+  font-size: 12.5pt;
+  color: black;
+}
+
+.col-md-5ths{
+    margin: 18px 0;
+  padding: 0;
+  width: 20%;
+  text-align: center;
+}
+
+.carousel-position{
+  margin: 4.5% 0;
+}
+
+.text-position{
+  background: white;
+  margin: 4.5% 0;
+}
+
+.pics{
+  opacity: 1;
+  transition: all .3s ease;
+}
+
+
+.pics.hidden{
+  opacity: 0;
+  transform: translateX(-0px) translateY(500px);
+}
+
+.carousel-block{
+  border-radius: 10px;
+}
+
+.text-block{
+  background: none;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px #999;
+}
+
+.row-position div{
+  display: inline-block;
+}
+
+.upper-symbol{
+  float: right;
+  margin-top: 13pt;
+  opacity: .5;
+}
+
+.upper-symbol:hover{
+  float: right;
+  margin-top: 13pt;
+  opacity: 1;
+  -o-transition: opacity .30s ease-in-out;
+  -webkit-transition: opacity .30s ease-in-out;
+  -moz-transition: opacity .30s ease-in-out;
+  transition:  opacity .30s ease-in-out;
+}
+
+.topic-text-1{
+  font-family: gotham light;
+  font-size: 35pt;
+  color: #000;
+}
+
+.topic-text-2{
+  font-family: gotham light;
+  font-size: 10pt;
+  color: #000;
+}
+
+.sub{
+  font-family: gotham medium;
+  font-size: 10pt;
+  margin-top: 8%;
+}
+
+.content{
+  font-family: gotham light;
+  font-size: 10pt;
+  color: #000;
+  line-height: 22pt;
+  text-align: justify;
+}
+
+.lower-symbol-both{
+  float: right;
+}
+
+.lower-symbol{
+  margin: 13pt 0 13pt 10pt;
+  opacity: .5;
+}
+
+.lower-symbol:hover{
+  margin: 13pt 0 13pt 10pt;
+  opacity: 1;
+  -o-transition: opacity .30s ease-in-out;
+  -webkit-transition: opacity .30s ease-in-out;
+  -moz-transition: opacity .30s ease-in-out;
+  transition:  opacity .30s ease-in-out;
+}
+
+.bottomBar{
+  background: #999;
+  width: 100%;
+  height: 80px;
+  margin-top: 100px;
+}
+
+.bottomSign{
+  background: none;
+  color: white;
+  font-family: gotham light;
+  font-size: 9pt;
+  line-height: 80px;
+  text-align: right;
+}
+
+.bottomIconPosition{
+  line-height: 80px;
+  text-align: left;
+}
+
+.bottomIcon1{
+  width: 30px;
+  height: 30px;
+  margin: 0 1% 0 0;
+  opacity: .5;
+}
+
+img.bottomIcon1:hover{
+  width: 30px;
+  height: 30px;
+  margin: 0 1% 0 0;
+  opacity: 1;
+  -o-transition: opacity .30s ease-in-out;
+  -webkit-transition: opacity .30s ease-in-out;
+  -moz-transition: opacity .30s ease-in-out;
+  transition:  opacity .30s ease-in-out;
+}
+
+.bottomIcon2_3{
+  width: 30px;
+  height: 30px;
+  margin: 0 1% 0 1%;
+  opacity: .5;
+}
+
+img.bottomIcon2_3:hover{
+  width: 30px;
+  height: 30px;
+  margin: 0 1% 0 1%;
+  opacity: 1;
+  -o-transition: opacity .30s ease-in-out;
+  -webkit-transition: opacity .30s ease-in-out;
+  -moz-transition: opacity .30s ease-in-out;
+  transition:  opacity .30s ease-in-out;
+}
