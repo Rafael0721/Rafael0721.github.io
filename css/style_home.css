@@ -771,7 +771,7 @@ ul{
   }
   .header-block{
     background-position: left;
-    background-size: 30%;
+    background-size: auto;
   }
   .logo-for-sm{
     display: block;
