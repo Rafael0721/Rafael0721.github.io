@@ -768,7 +768,6 @@ ul{
   }
   .header-block{
     background-image: url('../img/cover_vertical.jpg');
-    background-size: 30%;
   }
   .logo-for-sm{
     display: block;
@@ -905,7 +904,6 @@ ul{
   }
   .header-block{
     background-image: url('../img/cover_vertical.jpg');
-    background-size: 30%;
   }
   .logo-for-sm{
     display: block;
@@ -924,7 +922,7 @@ ul{
     margin: 30px 0 30px 0;
   }
   .header-content{
-    margin: 10rem 0;
+    margin: 3rem 0;
   }
   .header-intro-block .underlined-btn{
     display: inline-block;
@@ -1041,8 +1039,6 @@ ul{
     display: none;
   }
   .header-block{
-    background-image: url('../img/cover_vertical.jpg');
-    background-size: 30%;
   }
   .logo-for-sm{
     display: block;
@@ -1061,7 +1057,7 @@ ul{
     margin: 30px 0 30px 0;
   }
   .header-content{
-    margin: 10rem 0;
+    margin: 3rem 0;
   }
   .header-intro-block .underlined-btn{
     display: inline-block;
