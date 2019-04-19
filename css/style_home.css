@@ -755,7 +755,7 @@ ul{
     font-family: arial;
   }
   h1{
-    font-size: 55pt;
+    font-size: 65pt;
   }
   h2{
     font-size: 50pt;
@@ -771,6 +771,7 @@ ul{
   }
   .header-block{
     background-position: left;
+    background-size: 320%;
   }
   .logo-for-sm{
     display: block;
@@ -830,9 +831,6 @@ ul{
   .skill-column section{
     margin-bottom: 5rem;
     margin-left: 0px;
-  }
-  .skill-column h3{
-    font-size: 50pt;
   }
   .skill-underline20, .skill-underline40, .skill-underline60, .skill-underline80, .skill-underline100{
     border-width: 5px;
@@ -897,7 +895,7 @@ ul{
     font-family: arial;
   }
   h1{
-    font-size: 55pt;
+    font-size: 65pt;
   }
   h2{
     font-size: 50pt;
@@ -913,6 +911,7 @@ ul{
   }
   .header-block{
     background-position: left;
+    background-size: 320%;
   }
   .logo-for-sm{
     display: block;
@@ -972,9 +971,6 @@ ul{
   .skill-column section{
     margin-bottom: 5rem;
     margin-left: 0px;
-  }
-  .skill-column h3{
-    font-size: 50pt;
   }
   .skill-underline20, .skill-underline40, .skill-underline60, .skill-underline80, .skill-underline100{
     border-width: 5px;
