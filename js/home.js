@@ -1,0 +1,166 @@
+// opening animation
+var preload = document.getElementById("preload");
+var cover = document.getElementById("squareCover");
+setTimeout(function(){
+  cover.classList.add("cover-move1");
+}, 100);
+setTimeout(function(){
+  cover.classList.add("cover-move2");
+}, 1500);
+setTimeout(function(){
+  preload.style.opacity = "0";
+}, 2800);
+setTimeout(function(){
+  preload.style.display = "none";
+}, 3500);
+
+// tag animation
+var about = document.getElementById('tag_about');
+    work = document.getElementById('tag_work');
+    skill = document.getElementById('tag_skill');
+    edu = document.getElementById('tag_event');
+    contact = document.getElementById('tag_contact');
+
+function back(){
+  var current = document.getElementsByClassName("tag-moved");
+  if(current[0]){
+    current[0].classList.remove("tag-moved");
+  }
+}
+
+about.addEventListener("click", function(){
+  // 設置一點點timeout 才不會和滾動的tag事件衝突
+  setTimeout(function(){
+    back();
+    about.classList.add("tag-moved");
+  }, 100);
+});
+work.addEventListener("click", function(){
+  setTimeout(function(){
+    back();
+    work.classList.add("tag-moved");
+  }, 100);
+});
+skill.addEventListener("click", function(){
+  setTimeout(function(){
+    back();
+    skill.classList.add("tag-moved");
+  }, 100);
+});
+edu.addEventListener("click", function(){
+  setTimeout(function(){
+    back();
+    edu.classList.add("tag-moved");
+  }, 100);
+});
+contact.addEventListener("click", function(){
+  setTimeout(function(){
+    back();
+    contact.classList.add("tag-moved");
+  }, 100);
+});
+
+window.addEventListener("scroll", function(){
+  var ypos = window.pageYOffset;
+      yheight = window.innerHeight;
+      aboutY = document.getElementById("aboutBlock").offsetTop;
+      workY = document.getElementById("workBlock").offsetTop;
+      skillY = document.getElementById("skillBlock").offsetTop;
+      parallaxBlockY = document.getElementById("parallaxBlock").offsetTop;
+      parallaxY = document.getElementById("parallaxBG").offsetTop;
+      eventY = document.getElementById("eventBlock").offsetTop;
+      contactY = document.getElementById("contactBlock").offsetTop;
+
+  // tag 事件
+  if(ypos > aboutY-50){
+    back();
+    about.classList.add("tag-moved");
+  } else{
+    back();
+  }
+  if(ypos > workY-50){
+    back();
+    work.classList.add("tag-moved");
+  }
+  if(ypos > skillY-50){
+    back();
+    skill.classList.add("tag-moved");
+  }
+  if(ypos > eventY-50){
+    back();
+    edu.classList.add("tag-moved");
+  }
+  if(contactY-ypos < yheight){
+    back();
+    contact.classList.add("tag-moved");
+  }
+
+  // block漂浮事件
+  // block出現超過 畫面高度的三成 才漂浮入場
+  if(ypos > aboutY-yheight*0.7){
+    document.getElementById("aboutBlock").classList.remove("up-down-moved");
+  } else{
+    document.getElementById("aboutBlock").classList.add("up-down-moved");
+  }
+  if(ypos > skillY-yheight*0.7){
+    document.getElementById("skillBlock").classList.remove("up-down-moved");
+  } else{
+    document.getElementById("skillBlock").classList.add("up-down-moved");
+  }
+  if(ypos > eventY-yheight*0.7){
+    document.getElementById("eventBlock").classList.remove("up-down-moved");
+  } else{
+    document.getElementById("eventBlock").classList.add("up-down-moved");
+  }
+
+  // parallax bg 事件
+  if(ypos > parallaxBlockY-yheight){
+    // 背景圖用0.5的速度來移動 從而製造出視差效果
+    var factor = 0.5*(ypos-parallaxBlockY);
+    // 一開始觸發事件時 圖片會先往Y負向(上)移動0.5*(ypos-parallaxBlockY)的距離
+    // 因為此時parallaxBlockY > ypos
+    document.getElementById("parallaxBG").style.transform = "translate3d(0px, "+factor+"px, 0px)";
+  } else{
+    document.getElementById("parallaxBG").style.transform = "translate3d(0px, 0px, 0px)";
+  }
+});
+
+
+
+// top-img clock automatic img change
+var imgSet = document.getElementsByClassName('img');
+
+var num = 1;
+var t;
+t = setTimeout(showSlides, 1000);
+
+function showSlides(){
+  //hide all img first
+  for(var i=0; i < imgSet.length; i++){
+    imgSet[i].classList.remove('show');
+  }
+
+  // 由於html的結構 (position:absolute;)
+  // imgSet[0]~imgSet[imgSet.length-2](第一個到倒數第二個)的順序是反過來的
+  // 也就是說  imgSet[0]等於倒數第二層  imgSet[imgSet.length-2]等於第一層
+  // 而num(想要顯示的圖層編號)是從1開始
+  if(num == imgSet.length){
+    imgSet[imgSet.length-1].classList.add("show");
+    num = 0;
+  } else{
+    // changed是轉換過的num  轉換成imgSet的位置
+    var changed = imgSet.length-num-1;
+
+    imgSet[changed].classList.add("show");
+  }
+
+  num++;
+  // 再次呼叫timeout
+  t = setTimeout(showSlides, 3000);
+}
+
+//mailButton
+document.getElementById('mailPage').addEventListener("click", openMail);
+function openMail(){
+  window.open("mailto:ytchen0721@gmail.com", "Rafael's mail");
+}

@@ -1,0 +1,744 @@
+@font-face{
+    font-family: "gotham bold";
+    src: url('font/Gotham-Bold.otf'),
+    url('font/Gotham-Bold.otf'); /* IE */
+}
+
+@font-face{
+    font-family: "gotham light";
+    src: url('font/Gotham-Light.otf'),
+    url('font/Gotham-Light.otf'); /* IE */
+}
+
+@font-face{
+    font-family: "gotham book";
+    src: url('font/Gotham-Book.otf'),
+    url('font/Gotham-Book.otf'); /* IE */
+}
+
+body{
+  /* user-select: none; 讓使用者無法反白 (google chrome)*/
+  user-select: none;
+  line-height: 1;
+  overflow-x: hidden;
+  margin: 0px;
+}
+
+body p{
+  margin: 0px;
+}
+
+body a{
+  text-decoration: none;
+  letter-spacing: 0.03em;
+}
+
+h1{
+  font-size: 42pt;
+  margin: 0px;
+  letter-spacing: 0.03em;
+}
+
+h2{
+  font-size: 30pt;
+  margin: 0px;
+  letter-spacing: 0.03em;
+}
+
+h3{
+  font-size: 14pt;
+  margin: 0px;
+  letter-spacing: 0.03em;
+}
+
+h4{
+  font-size: 10pt;
+  margin: 0px;
+  letter-spacing: 0.03em;
+}
+
+.pre-load{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: 4;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 0.5s ease-out;
+}
+
+.pre-load img{
+  position: absolute;
+}
+
+.white-cover{
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  background: #fff;
+}
+
+.cover-move1{
+  transform: translateX(0) translateY(-50px);
+  transition: all 0.8s ease-in-out;
+}
+
+.cover-move2{
+  transform: translateX(0) translateY(-130px);
+  transition: all 0.6s ease-out;
+}
+
+.category-block{
+  /* 將z-index設在最上層 */
+  z-index: 3;
+  position: fixed;
+  right: 0px;
+
+  font-family: gotham light;
+}
+
+.category-img{
+  width: 100px;
+  height: 100px;
+}
+
+ul{
+  margin: 0px;
+  padding: 0px;
+}
+.category-block ul li{
+  list-style: none;
+  text-align: center;
+  margin: 10px 10px 10px 0;
+  padding: 5px;
+  border-radius: 5px;
+  /* background: #666; */
+  transition: all 0.35s ease-out;
+  cursor: pointer;
+}
+
+.category-block ul li:nth-child(6){
+  display: none;
+}
+
+.category-block a{
+  color: #000;
+}
+
+.tag-moved{
+  transform: translateX(-20px);
+  background: #333;
+}
+
+.tag-moved a{
+  color: #fff;
+}
+
+.header-block{
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  font-family: gotham book;
+
+  background-image: url('../img/cover_5.jpg');
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  /* 定位裡面的intro-block */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow{
+  position: absolute;
+  bottom: 7vh;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 99em;
+  background: #fff;
+  box-shadow: 0px 0px 25px #999;
+  animation: arrowMove 2s infinite ease-in-out;
+}
+
+.arrow::after{
+  position: absolute;
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  left: 50%;
+  border-bottom: 1px solid #000;
+  border-right: 1px solid #000;
+  transform: translate3d(-50%, 75%, 0px) rotate(45deg);
+}
+
+@keyframes arrowMove {
+  0%   {transform: translate(0px, 0px);}
+  50%  {transform: translate(0px, 5vh);}
+  100% {transform: translate(0px, 0px);}
+}
+
+.logo-for-sm{
+  display: none;
+}
+
+.header-intro-block{
+  text-align: center;
+  box-shadow: 0px 0px 25px #999;
+  border-radius: 5px;
+  padding: 20px 30px 20px 30px;
+}
+
+.header-title{
+  margin: 20px 0 20px 0;
+}
+.header-content{
+  margin: 10px 0 10px 0;
+}
+.header-intro-block .underlined-btn{
+  display: none;
+}
+
+.about-block{
+  width: 90%;
+  font-family: gotham light;
+  /* 用padding來寫才會是本體 margin的話直接跳到這個div時會跳掉margin的部分(非本體) */
+  padding: 5rem 5% 0 5%;
+  transition: all 1s ease-out;
+}
+
+.about-block h2{
+  margin-bottom: 5rem;
+}
+
+.about-block h3{
+  line-height: 2.5;
+  text-align: justify;
+  margin-bottom: 5rem;
+}
+
+.work-block{
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.work-content{
+  position: absolute;
+  margin: 0 5%;
+  font-family: gotham light;
+  color: #fff;
+  /* 設為work-content的最上層 */
+  z-index: 2;
+}
+
+.underlined-btn{
+  /* 在父元素設為flex的情況下
+    子元素設為inline-block可以讓子元素的寬度
+    自動適應 "子元素" 的內容寬度  而非父元素的寬度 */
+  display: inline-block;
+  cursor: pointer;
+  margin-top: 2rem;
+}
+
+.underlined-btn h3 a{
+  color: #fff;
+  transition: all 0.35s ease-out;
+}
+
+.underline{
+  width: 100%;
+  margin-top: 5px;
+  border-bottom: 1.5px solid #fff;
+  transition: all 0.35s ease-out;
+}
+
+.underlined-btn:hover .underline{
+  width: 0%;
+}
+
+.underlined-btn:hover a{
+  color: #999;
+}
+
+.img-cover{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  z-index: 1;
+  opacity: 0.5;
+}
+
+.img-real{
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.img-abs{
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.show{
+  opacity: 1;
+}
+
+/* .dot{
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  background: #999;
+  border-radius: 99em;
+}
+
+.dot-pale{
+  opacity: .3;
+  cursor: pointer;
+} */
+
+.skill-block{
+  width: 100%;
+  padding: 5rem 5% 0 5%;
+  font-family: gotham light;
+  transition: all 1s ease-out;
+}
+
+.skill-block h2{
+  margin-bottom: 5rem;
+}
+
+.skill-column{
+  display: inline-block;
+  width: 30%;
+  /* 設定float讓中間的間隔消失 */
+  float: left;
+
+  /* margin-bottom: 5rem; */
+}
+
+.skill-column section{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 2rem;
+  /* 用margin-left調整中間一點 */
+  margin-left: 20%;
+}
+
+.skill-column img, .skill-name{
+  display: inline-block;
+}
+
+.skill-name{
+  margin-left: 10%;
+}
+
+.skill-underline20{
+  width: 20%;
+  margin-top: 5px;
+  border-bottom: 1px solid #000;
+}
+.skill-underline40{
+  width: 40%;
+  margin-top: 5px;
+  border-bottom: 1px solid #000;
+}
+.skill-underline60{
+  width: 60%;
+  margin-top: 5px;
+  border-bottom: 1px solid #000;
+}
+.skill-underline80{
+  width: 80%;
+  margin-top: 5px;
+  border-bottom: 1px solid #000;
+}
+.skill-underline100{
+  width: 100%;
+  margin-top: 5px;
+  border-bottom: 1px solid #000;
+}
+
+.parallax-block{
+  clear: both;
+  width: 100%;
+  height: 56.25vw;
+  padding-top: 5rem;
+  display: flex;
+  align-items: center;
+}
+
+.parallax-outer{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.parallax-outer img{
+  position: absolute;
+  width: 100%;
+  height: auto;
+  /* transform: scale(1.2); */
+  /* 因為parallaxBlock含有padding-top(5rem)，所以以他為參照基準的話需要將圖往上移一點做補償 */
+  margin-top: -25%;
+}
+
+.parallax-outer::after{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: scale(1.2);
+  background: #000;
+  opacity: 0.5;
+}
+
+.parallax-content{
+  position: absolute;
+  width: 90%;
+  margin: 0 5%;
+  font-family: gotham light;
+  color: #fff;
+  z-index: 1;
+}
+
+.event-block{
+  clear: both;
+  width: 90%;
+  font-family: gotham light;
+
+  padding: 5rem 5% 0 5%;
+  transition: all 1s ease-out;
+}
+
+.event-left, .event-right{
+  width: 50%;
+  display: inline-block;
+  float: left;
+  margin: 5rem 0;
+}
+
+.event-left{
+  text-align: right;
+}
+.event-right{
+  text-align: left;
+}
+
+.event-left h3{
+  margin-right: 50px;
+  line-height: 0;
+}
+.event-left h3:nth-child(1), .event-left h3:nth-child(10){
+  margin-top: 145px;
+}
+.event-left h3:nth-child(2), .event-left h3:nth-child(11){
+  /* 點與點距離為50px 再加上點本身的直徑30px 故為80px */
+  margin-top: 80px;
+}
+.event-left h3:nth-child(3), .event-left h3:nth-child(12){
+  margin-top: 80px;
+}
+.event-left h3:nth-child(4), .event-left h3:nth-child(13){
+  margin-top: 50px;
+}
+.event-left h3:nth-child(5), .event-left h3:nth-child(14){
+  margin-top: 30px;
+}
+.event-left h3:nth-child(6), .event-left h3:nth-child(15){
+  margin-top: 30px;
+}
+.event-left h3:nth-child(7), .event-left h3:nth-child(16){
+  margin-top: 50px;
+}
+.event-left h3:nth-child(8), .event-left h3:nth-child(17){
+  margin-top: 80px;
+}
+.event-left h3:nth-child(9), .event-left h3:nth-child(18){
+  margin-top: 130px;
+}
+
+.short-length{
+  display: none;
+}
+
+.event-right h3{
+  margin-left: 120px;
+  line-height: 0;
+}
+.event-right h3:nth-child(1), .event-right h3:nth-child(3){
+  margin-top: 80px;
+}
+.event-right h3:nth-child(2), .event-right h3:nth-child(4){
+  margin-top: 265px;
+}
+
+.timeline{
+  position: absolute;
+  left: 50%;
+  margin-top: 5rem;
+  margin-left: -1.5px;
+  width: 3px;
+  height: 690px;
+  border-left: 3px dashed #999;
+}
+.timeline-point{
+  /* position: absolute; */
+  width: 30px;
+  height: 30px;
+  margin-left: -16px;
+  background: #999;
+  border-radius: 99em;
+  display: flex;
+  align-items: center;
+}
+
+.timeline-point h3{
+  margin-left: 50px;
+}
+.point-long{
+  /* 兩倍距離表示兩年 */
+  margin-top: 100px;
+}
+.point-short{
+  /* 點與點之間的距離 */
+  margin-top: 50px;
+}
+
+.bottom-block{
+  clear: both;
+  width: 100%;
+  background: #333;
+  padding: 5rem 0;
+}
+
+.bottom-content{
+  width: 90%;
+  margin: 0 5%;
+  color: #fff;
+  font-family: gotham light;
+}
+
+.bottom-content h3{
+  font-size: 24pt;
+  margin-bottom: 3rem;
+}
+.bottom-content h3 span{
+  margin-left: 20px;
+  font-size: 10pt;
+  color: #999;
+}
+
+.bottom-content section{
+  margin-top: 1rem;
+}
+
+.bottom-content section img{
+  width: 30px;
+  height: 30px;
+  opacity: 0.5;
+  margin-right: 10px;
+  transition: all 0.35s ease-out;
+}
+
+.bottom-content section img:hover{
+  opacity: 1;
+}
+
+.bottom-content section img, h4{
+  display: inline-block;
+}
+.bottom-content section h4{
+  float: right;
+  margin-top: 16px;
+}
+
+
+.up-down-moved{
+  transform: translateY(30px);
+  opacity: 0;
+}
+
+
+/*responsive for smaller screen*/
+/* XSS */
+@media screen and (max-width: 500px){
+  h1{
+    font-size: 32pt;
+  }
+  h2{
+    font-size: 26pt;
+  }
+  h3{
+    font-size: 12pt;
+  }
+  .category-block ul li{
+    display: none;
+  }
+  .header-block{
+    background-position: left;
+  }
+  .logo-for-sm{
+    display: block;
+    position: absolute;
+    top: 1rem;
+    left: 5%;
+  }
+  .header-intro-block{
+    box-shadow: none;
+    padding: 10px 20px 10px 20px;
+  }
+  .header-intro-block img{
+    display: none;
+  }
+  .header-title{
+    margin: 30px 0 30px 0;
+  }
+  .header-content{
+    margin: 20px 0 20px 0;
+  }
+  .header-intro-block .underlined-btn{
+    display: inline-block;
+    margin-top: 20px;
+  }
+  .header-intro-block .underlined-btn .underline{
+    border-color: #000;
+  }
+  .header-intro-block h3 a{
+    display: block;
+    /* padding: 10px; */
+    /* margin-top: 20px; */
+    /* border: solid 1px; */
+    /* border-radius: 5px; */
+    color: #000;
+  }
+  .work-content h2{
+    line-height: 1.5;
+  }
+  .arrow{
+    background: none;
+    box-shadow: none;
+    bottom: 5vh;
+  }
+  @keyframes arrowMove {
+    50%  {transform: translate(0px, 3vh);}
+  }
+  .skill-column{
+    width: 100%;
+  }
+  .parallax-outer img{
+    width: 120%;
+    /* 因為parallaxBlock含有padding-top(5rem)，所以以他為參照基準的話需要將圖往上移一點做補償 */
+    margin-top: -15%;
+  }
+  .parallax-block h2{
+    line-height: 1.5;
+  }
+  .timeline{
+    left: 75%;
+  }
+  .event-right{
+    display: none;
+  }
+  .event-left{
+    width: 70%;
+  }
+  .event-left h3{
+    margin-right: 20px;
+    /* font-size: 10pt; */
+  }
+  .normal-length{
+    display: none;
+  }
+  .short-length{
+    display: block;
+  }
+  .bottom-content h3 span{
+    margin-left: 0px;
+    margin-top: 1rem;
+    display: block;
+  }
+  .bottom-content section h4{
+    display: block;
+  }
+  .bottom-content section h4{
+    float: none;
+    margin-top: 1rem;
+  }
+}
+/* extra small */
+@media screen and (min-width: 500px) and (max-width: 768px){
+  h1{
+    font-size: 35pt;
+  }
+  h2{
+    font-size: 26pt;
+  }
+  h3{
+    font-size: 12pt;
+  }
+  .work-content h2{
+    line-height: 1.5;
+  }
+  .skill-column{
+    width: 50%;
+  }
+  .skill-column section{
+    margin-left: 10%;
+  }
+  .parallax-block h2{
+    line-height: 1.5;
+  }
+  .timeline{
+    left: 75%;
+  }
+  .event-right{
+    display: none;
+  }
+  .event-left{
+    width: 70%;
+  }
+  .normal-length{
+    display: none;
+  }
+  .short-length{
+    display: block;
+  }
+}
+/* small */
+@media screen and (min-width: 768px) and (max-width: 992px){
+  h1{
+    font-size: 35pt;
+  }
+  h2{
+    font-size: 26pt;
+  }
+  h3{
+    font-size: 12pt;
+  }
+  .normal-length{
+    display: none;
+  }
+  .short-length{
+    display: block;
+  }
+}
+/* medium */
+@media screen and (min-width: 992px) and (max-width: 1200px){
+  .normal-length{
+    display: none;
+  }
+  .short-length{
+    display: block;
+  }
+}

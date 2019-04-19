@@ -1,0 +1,385 @@
+@font-face{
+    font-family: "gotham bold";
+    src: url('font/Gotham-Bold.otf'),
+    url('font/Gotham-Bold.otf'); /* IE */
+}
+
+@font-face{
+    font-family: "gotham light";
+    src: url('font/Gotham-Light.otf'),
+    url('font/Gotham-Light.otf'); /* IE */
+}
+
+@font-face{
+    font-family: "gotham book";
+    src: url('font/Gotham-Book.otf'),
+    url('font/Gotham-Book.otf'); /* IE */
+}
+
+body{
+  /* user-select: none; 讓使用者無法反白 (google chrome)*/
+  user-select: none;
+  line-height: 1;
+  overflow-x: hidden;
+  margin: 0px;
+}
+
+body p{
+  margin: 0px;
+}
+
+body a{
+  text-decoration: none;
+  letter-spacing: 0.03em;
+}
+
+ul{
+  margin: 0;
+  padding: 0;
+}
+
+ul li{
+  list-style: none;
+}
+
+h2{
+  font-size: 30pt;
+  margin: 0px;
+  letter-spacing: 0.03em;
+}
+
+h3{
+  font-size: 14pt;
+  margin: 0px;
+  letter-spacing: 0.03em;
+}
+
+h4{
+  font-size: 10pt;
+  margin: 0px;
+  letter-spacing: 0.03em;
+}
+
+header{
+  margin: 5vw 5% 1rem 5%;
+  font-family: gotham book;
+  position: relative;
+}
+
+header .title{
+  font-size: 24pt;
+}
+header h3 span{
+  font-size: 10pt;
+  margin-left: 20px;
+  color: #999;
+  font-family: gotham light;
+}
+
+/* header h3, header .links{
+  display: inline-block;
+} */
+
+.links{
+  position: absolute;
+  right: 0px;
+  top: 9pt;
+}
+
+.underlined-btn{
+  /* 在父元素設為flex的情況下
+    子元素設為inline-block可以讓子元素的寬度
+    自動適應 "子元素" 的內容寬度  而非父元素的寬度 */
+  display: inline-block;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.underlined-btn h3 a, .underlined-btn h4 a{
+  color: #000;
+  transition: all 0.35s ease-out;
+}
+
+.underline{
+  width: 100%;
+  margin-top: 5px;
+  border-bottom: 1.5px solid #000;
+  transition: all 0.35s ease-out;
+}
+
+.underlined-btn:hover .underline{
+  width: 0%;
+}
+
+.underlined-btn:hover a{
+  color: #999;
+}
+
+.work-block{
+  width: 90%;
+  margin: 0 5% 5rem 5%;
+}
+
+.work-block .underlined-btn{
+  display: none;
+}
+.work-block .giftgo-link{
+  display: inline-block;
+  margin-left: 0px;
+  margin-top: 2rem;
+}
+
+.work-img, .work-content{
+  width: 100%;
+}
+
+.work-img{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50.625vw;
+  overflow: hidden;
+}
+
+.img-real{
+  opacity: 0;
+  transition: opacity 0.8s ease-out;
+}
+
+.img-abs{
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.8s ease-out;
+}
+
+.arrow-block-left, .arrow-block-right{
+  position: absolute;
+  z-index: 1;
+  width: 7rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.arrow-block-left{
+  left: 0%;
+}
+.arrow-block-right{
+  right: 0%;
+}
+
+.arrow-left, .arrow-right{
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  border-bottom: 5px solid #000;
+  border-right: 5px solid #000;
+  border-radius: 5px;
+  transform: rotate(135deg);
+  opacity: 0.5;
+  transition: all 0.35s ease-out;
+}
+
+.arrow-left{
+  transform: rotate(135deg);
+}
+.arrow-right{
+  transform: rotate(-45deg);
+}
+
+.arrow-block-left:hover .arrow-left{
+  transform: scale(1.5) rotate(135deg);
+  opacity: 1;
+}
+.arrow-block-right:hover .arrow-right{
+  transform: scale(1.5) rotate(-45deg);
+  opacity: 1;
+}
+
+.dot-group{
+  position: absolute;
+  z-index: 1;
+  bottom: 0px;
+}
+
+.dot-group li{
+  display: inline-block;
+  margin: 1rem 2.5px;
+}
+
+.dot{
+  width: 7px;
+  height: 7px;
+  background: #000;
+  border-radius: 99em;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.8s ease-out;
+}
+
+.show{
+  opacity: 1;
+}
+
+.work-content{
+  font-family: gotham light;
+}
+
+.work-content h2{
+  margin: 5rem 0 1rem 0;
+}
+
+.work-content ul li{
+  display: inline-block;
+  margin: 1rem 10px;
+  padding: 7px;
+  border: solid 1px #000;
+  border-radius: 5px;
+}
+.work-content ul li:nth-child(1){
+  margin-left: 0px;
+}
+
+.about{
+  margin: 2rem 0 1rem 0;
+}
+
+.content-text{
+  line-height: 2.5;
+  text-align: justify;
+}
+
+.video-block{
+  position: relative;
+  width: 90%;
+  height: 50.625vw;
+  margin: 0 5% 5rem 5%;
+}
+
+.bottom-block{
+  clear: both;
+  width: 100%;
+  background: #333;
+  padding: 5rem 0;
+}
+
+.bottom-content{
+  width: 90%;
+  margin: 0 5%;
+  color: #fff;
+  font-family: gotham light;
+}
+
+.bottom-content h3{
+  font-size: 24pt;
+  margin-bottom: 3rem;
+}
+.bottom-content h3 span{
+  margin-left: 20px;
+  font-size: 10pt;
+  color: #999;
+}
+
+.bottom-content section{
+  margin-top: 1rem;
+}
+
+.bottom-content section img{
+  width: 30px;
+  height: 30px;
+  opacity: 0.5;
+  margin-right: 10px;
+  transition: all 0.35s ease-out;
+}
+
+.bottom-content section img:hover{
+  opacity: 1;
+}
+
+.bottom-content section img, h4{
+  display: inline-block;
+}
+.bottom-content section h4{
+  float: right;
+  margin-top: 16px;
+}
+
+
+
+/*responsive for smaller screen*/
+/* XSS */
+@media screen and (max-width: 500px){
+  h2{
+    font-size: 26pt;
+  }
+  h3{
+    font-size: 12pt;
+  }
+  header h3 span, .bottom-content h3 span{
+    display: block;
+    margin-left: 0px;
+    margin-top: 1rem;
+  }
+  header .links{
+    display: none;
+  }
+  .dot-group li{
+    margin: 0.5rem 2.5px;
+  }
+  .arrow-block-left, .arrow-block-right{
+    width: 3rem;
+  }
+  .work-content{
+    line-height: 1.5;
+  }
+  .work-content ul li{
+    margin: 0.5rem 2.5px;
+  }
+  .work-block .underlined-btn{
+    /* display: table;也可以讓div自動適應本身寬度(不繼承父元素的寬度) */
+    display: table;
+    margin-left: 0px;
+    margin-top: 2rem;
+  }
+  .about{
+    margin: 1rem 0;
+  }
+  .bottom-content section h4{
+    display: block;
+    float: none;
+    margin-top: 1rem;
+  }
+}
+/* extra small */
+@media screen and (min-width: 500px) and (max-width: 768px){
+  h2{
+    font-size: 26pt;
+  }
+  h3{
+    font-size: 12pt;
+  }
+  header .links{
+    display: none;
+  }
+  .work-block .underlined-btn{
+    display: inline-block;
+    margin-left: 0px;
+    margin-top: 2rem;
+  }
+}
+/* small */
+@media screen and (min-width: 768px) and (max-width: 992px){
+  h2{
+    font-size: 26pt;
+  }
+  h3{
+    font-size: 12pt;
+  }
+}
+/* medium */
+@media screen and (min-width: 992px) and (max-width: 1200px){
+
+}
