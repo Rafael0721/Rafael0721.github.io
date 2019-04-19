@@ -751,6 +751,9 @@ ul{
 /*responsive for smaller screen*/
 /* XSS */
 @media screen and (max-device-width: 500px){
+  body{
+    font-family: arial;
+  }
   h1{
     font-size: 55pt;
   }
@@ -759,6 +762,9 @@ ul{
   }
   h3{
     font-size: 32pt;
+  }
+  h4{
+    font-size: 14pt;
   }
   .category-block ul li{
     display: none;
@@ -815,6 +821,9 @@ ul{
   @keyframes arrowMove {
     50%  {transform: translate(0px, 3vh);}
   }
+  .skill-block{
+    width: 90%;
+  }
   .skill-column{
     width: 100%;
   }
@@ -863,6 +872,9 @@ ul{
   .short-length{
     display: block;
   }
+  .bottom-block{
+    padding: 10rem 0;
+  }
   .bottom-content h3{
     font-size: 32pt;
   }
@@ -881,41 +893,144 @@ ul{
 }
 /* extra small */
 @media screen and (min-device-width: 500px) and (max-device-width: 768px){
+  body{
+    font-family: arial;
+  }
   h1{
-    font-size: 35pt;
+    font-size: 55pt;
   }
   h2{
-    font-size: 26pt;
+    font-size: 50pt;
   }
   h3{
-    font-size: 12pt;
+    font-size: 32pt;
+  }
+  h4{
+    font-size: 14pt;
+  }
+  .category-block ul li{
+    display: none;
+  }
+  .header-block{
+    background-position: left;
+  }
+  .logo-for-sm{
+    display: block;
+    position: absolute;
+    top: 3rem;
+    left: 5%;
+  }
+  .header-intro-block{
+    box-shadow: none;
+    padding: 10px 20px 10px 20px;
+  }
+  .header-intro-block img{
+    display: none;
+  }
+  .header-title{
+    margin: 30px 0 30px 0;
+  }
+  .header-content{
+    margin: 10rem 0;
+  }
+  .header-intro-block .underlined-btn{
+    display: inline-block;
+    margin-top: 20px;
+  }
+  .header-intro-block .underlined-btn .underline{
+    border-color: #000;
+  }
+  .header-intro-block h3 a{
+    display: block;
+    /* padding: 10px; */
+    /* margin-top: 20px; */
+    /* border: solid 1px; */
+    /* border-radius: 5px; */
+    color: #000;
   }
   .work-content h2{
     line-height: 1.5;
   }
+  .arrow{
+    background: none;
+    box-shadow: none;
+    bottom: 10vh;
+  }
+  .arrow::after{
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+  @keyframes arrowMove {
+    50%  {transform: translate(0px, 3vh);}
+  }
+  .skill-block{
+    width: 90%;
+  }
   .skill-column{
-    width: 50%;
+    width: 100%;
   }
   .skill-column section{
-    margin-left: 10%;
+    margin-bottom: 5rem;
+    margin-left: 0px;
+  }
+  .skill-column h3{
+    font-size: 50pt;
+  }
+  .skill-underline20, .skill-underline40, .skill-underline60, .skill-underline80, .skill-underline100{
+    border-width: 5px;
+  }
+  .underlined-btn{
+    margin-top: 5rem;
+  }
+  .parallax-outer img{
+    width: 150%;
+    /* 因為parallaxBlock含有padding-top(5rem)，所以以他為參照基準的話需要將圖往上移一點做補償 */
+    margin-top: -15%;
   }
   .parallax-block h2{
     line-height: 1.5;
   }
   .timeline{
-    left: 75%;
+    display: none;
   }
   .event-right{
     display: none;
   }
   .event-left{
-    width: 70%;
+    width: 100%;
+    text-align: left;
+  }
+  .event-left h3{
+    margin-right: 20px;
+    line-height: 1.5;
+    /* font-size: 10pt; */
+  }
+  .event-left h3:nth-child(10){
+    margin-top: 0px;
   }
   .normal-length{
     display: none;
   }
   .short-length{
     display: block;
+  }
+  .bottom-block{
+    padding: 10rem 0;
+  }
+  .bottom-content h3{
+    font-size: 32pt;
+  }
+  .bottom-content h3 span{
+    margin-left: 0px;
+    margin-top: 1rem;
+    display: block;
+    font-size: 14pt;
+  }
+  .bottom-content section h4{
+    display: block;
+    float: none;
+    margin-top: 1rem;
+    font-size: 14pt;
   }
 }
 /* small */
