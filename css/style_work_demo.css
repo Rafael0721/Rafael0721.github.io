@@ -383,3 +383,94 @@ header h3 span{
 @media screen and (min-width: 992px) and (max-width: 1200px){
 
 }
+
+
+
+/*responsive for smaller screen*/
+/* XSS */
+@media screen and (max-device-width: 500px){
+  h2{
+    font-size: 50pt;
+  }
+  h3{
+    font-size: 32pt;
+  }
+  h4{
+    font-size: 14pt;
+  }
+  header .title{
+    font-size: 32pt;
+  }
+  header h3 span, .bottom-content h3 span{
+    display: block;
+    margin-left: 0px;
+    margin-top: 1rem;
+    font-size: 14pt;
+  }
+  header .links{
+    display: none;
+  }
+  .dot-group li{
+    margin: 0.5rem 2.5px;
+  }
+  .arrow-block-left, .arrow-block-right{
+    width: 3rem;
+  }
+  .work-content{
+    line-height: 1.5;
+  }
+  .work-content ul li{
+    margin: 0.5rem 2.5px;
+  }
+  .work-block .underlined-btn{
+    /* display: table;也可以讓div自動適應本身寬度(不繼承父元素的寬度) */
+    display: table;
+    margin-left: 0px;
+    margin-top: 2rem;
+  }
+  .about{
+    margin: 1rem 0;
+  }
+  .bottom-content h3{
+    font-size: 32pt;
+  }
+  .bottom-content h3 span{
+    font-size: 14pt;
+  }
+  .bottom-content section h4{
+    display: block;
+    float: none;
+    margin-top: 1rem;
+    font-size: 14pt;
+  }
+}
+/* extra small */
+@media screen and (min-device-width: 500px) and (max-device-width: 768px){
+  h2{
+    font-size: 26pt;
+  }
+  h3{
+    font-size: 12pt;
+  }
+  header .links{
+    display: none;
+  }
+  .work-block .underlined-btn{
+    display: inline-block;
+    margin-left: 0px;
+    margin-top: 2rem;
+  }
+}
+/* small */
+@media screen and (min-device-width: 768px) and (max-device-width: 992px){
+  h2{
+    font-size: 26pt;
+  }
+  h3{
+    font-size: 12pt;
+  }
+}
+/* medium */
+@media screen and (min-device-width: 992px) and (max-device-width: 1200px){
+
+}
