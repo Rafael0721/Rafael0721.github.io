@@ -768,6 +768,7 @@ ul{
   }
   .header-block{
     background-image: url('../img/cover_vertical.jpg');
+    background-size: 100%;
   }
   .logo-for-sm{
     display: block;
@@ -904,6 +905,7 @@ ul{
   }
   .header-block{
     background-image: url('../img/cover_vertical.jpg');
+    background-size: 100%;
   }
   .logo-for-sm{
     display: block;
@@ -1040,6 +1042,7 @@ ul{
   }
   .header-block{
     background-image: url('../img/cover_vertical.jpg');
+    background-size: 100%;
   }
   .logo-for-sm{
     display: block;
