@@ -770,8 +770,11 @@ ul{
     display: none;
   }
   .header-block{
-    background-position: left;
-    background-size: auto;
+    background-image: url('../img/cover_vertical.jpg');
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
   }
   .logo-for-sm{
     display: block;
