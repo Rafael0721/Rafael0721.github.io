@@ -138,6 +138,10 @@ ul{
   color: #fff;
 }
 
+.sm-header{
+  display: none;
+}
+
 .header-block{
   position: relative;
   width: 100vw;
@@ -763,60 +767,55 @@ ul{
   h4{
     font-size: 14pt;
   }
+  .pre-load{
+    display: none;
+  }
   .category-block ul li{
     display: none;
   }
   .header-block{
-    background-image: url('../img/cover_vertical.jpg');
-  }
-  .logo-for-sm{
-    display: block;
-    position: absolute;
-    top: 3rem;
-    left: 5%;
-  }
-  .header-intro-block{
-    box-shadow: none;
-    padding: 10px 20px 10px 20px;
-  }
-  .header-intro-block img{
     display: none;
   }
-  .header-title{
-    margin: 30px 0 30px 0;
-  }
-  .header-content{
-    margin: 10rem 0;
-  }
-  .header-intro-block .underlined-btn{
-    display: inline-block;
-    margin-top: 20px;
-  }
-  .header-intro-block .underlined-btn .underline{
-    border-color: #000;
-  }
-  .header-intro-block h3 a{
+  .sm-header{
     display: block;
-    /* padding: 10px; */
-    /* margin-top: 20px; */
-    /* border: solid 1px; */
-    /* border-radius: 5px; */
+    width: 100%;
+    font-family: gotham light;
+  }
+  .sm-header section{
+    width: 90%;
+    margin: 5vw 5% 1rem 5%;
+    font-family: gotham book;
+  }
+  .sm-bg-wrap{
+    position: relative;
+    width: 100%;
+    height: 56.25vw;
+    font-family: gotham book;
+
+    /* 定位裡面的intro-block */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .sm-header section h3 span, .bottom-content h3 span{
+    display: block;
+    margin-left: 0px;
+    margin-top: 1rem;
+    font-size: 14pt;
+    color: #999;
+  }
+  .sm-header-content{
+    position: absolute;
+    text-align: center;
+  }
+  .sm-header-content .underlined-btn a{
     color: #000;
+  }
+  .sm-header-content .underlined-btn .underline{
+    border-bottom: 1.5px solid #000;
   }
   .work-content h2{
     line-height: 1.5;
-  }
-  .arrow{
-    background: none;
-    box-shadow: none;
-    bottom: 10vh;
-  }
-  .arrow::after{
-    width: 3.5rem;
-    height: 3.5rem;
-  }
-  @keyframes arrowMove {
-    50%  {transform: translate(0px, 3vh);}
   }
   .skill-block{
     width: 90%;
@@ -872,17 +871,15 @@ ul{
   .bottom-content h3{
     font-size: 32pt;
   }
-  .bottom-content h3 span{
-    margin-left: 0px;
-    margin-top: 1rem;
-    display: block;
-    font-size: 14pt;
-  }
   .bottom-content section h4{
     display: block;
     float: none;
     margin-top: 1rem;
     font-size: 14pt;
+  }
+  .up-down-moved{
+    transform: translateY(0px);
+    opacity: 1;
   }
 }
 /* extra small */
@@ -899,60 +896,55 @@ ul{
   h4{
     font-size: 14pt;
   }
+  .pre-load{
+    display: none;
+  }
   .category-block ul li{
     display: none;
   }
   .header-block{
-    background-image: url('../img/cover_vertical.jpg');
-  }
-  .logo-for-sm{
-    display: block;
-    position: absolute;
-    top: 3rem;
-    left: 5%;
-  }
-  .header-intro-block{
-    box-shadow: none;
-    padding: 10px 20px 10px 20px;
-  }
-  .header-intro-block img{
     display: none;
   }
-  .header-title{
-    margin: 30px 0 30px 0;
-  }
-  .header-content{
-    margin: 3rem 0;
-  }
-  .header-intro-block .underlined-btn{
-    display: inline-block;
-    margin-top: 20px;
-  }
-  .header-intro-block .underlined-btn .underline{
-    border-color: #000;
-  }
-  .header-intro-block h3 a{
+  .sm-header{
     display: block;
-    /* padding: 10px; */
-    /* margin-top: 20px; */
-    /* border: solid 1px; */
-    /* border-radius: 5px; */
+    width: 100%;
+    font-family: gotham light;
+  }
+  .sm-header section{
+    width: 90%;
+    margin: 5vw 5% 1rem 5%;
+    font-family: gotham book;
+  }
+  .sm-bg-wrap{
+    position: relative;
+    width: 100%;
+    height: 56.25vw;
+    font-family: gotham book;
+
+    /* 定位裡面的intro-block */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .sm-header section h3 span, .bottom-content h3 span{
+    display: block;
+    margin-left: 0px;
+    margin-top: 1rem;
+    font-size: 14pt;
+    color: #999;
+  }
+  .sm-header-content{
+    position: absolute;
+    text-align: center;
+  }
+  .sm-header-content .underlined-btn a{
     color: #000;
+  }
+  .sm-header-content .underlined-btn .underline{
+    border-bottom: 1.5px solid #000;
   }
   .work-content h2{
     line-height: 1.5;
-  }
-  .arrow{
-    background: none;
-    box-shadow: none;
-    bottom: 10vh;
-  }
-  .arrow::after{
-    width: 3.5rem;
-    height: 3.5rem;
-  }
-  @keyframes arrowMove {
-    50%  {transform: translate(0px, 3vh);}
   }
   .skill-block{
     width: 90%;
@@ -1008,17 +1000,15 @@ ul{
   .bottom-content h3{
     font-size: 32pt;
   }
-  .bottom-content h3 span{
-    margin-left: 0px;
-    margin-top: 1rem;
-    display: block;
-    font-size: 14pt;
-  }
   .bottom-content section h4{
     display: block;
     float: none;
     margin-top: 1rem;
     font-size: 14pt;
+  }
+  .up-down-moved{
+    transform: translateY(0px);
+    opacity: 1;
   }
 }
 /* small */
@@ -1035,59 +1025,55 @@ ul{
   h4{
     font-size: 14pt;
   }
+  .pre-load{
+    display: none;
+  }
   .category-block ul li{
     display: none;
   }
   .header-block{
-  }
-  .logo-for-sm{
-    display: block;
-    position: absolute;
-    top: 3rem;
-    left: 5%;
-  }
-  .header-intro-block{
-    box-shadow: none;
-    padding: 10px 20px 10px 20px;
-  }
-  .header-intro-block img{
     display: none;
   }
-  .header-title{
-    margin: 30px 0 30px 0;
-  }
-  .header-content{
-    margin: 3rem 0;
-  }
-  .header-intro-block .underlined-btn{
-    display: inline-block;
-    margin-top: 20px;
-  }
-  .header-intro-block .underlined-btn .underline{
-    border-color: #000;
-  }
-  .header-intro-block h3 a{
+  .sm-header{
     display: block;
-    /* padding: 10px; */
-    /* margin-top: 20px; */
-    /* border: solid 1px; */
-    /* border-radius: 5px; */
+    width: 100%;
+    font-family: gotham light;
+  }
+  .sm-header section{
+    width: 90%;
+    margin: 5vw 5% 1rem 5%;
+    font-family: gotham book;
+  }
+  .sm-bg-wrap{
+    position: relative;
+    width: 100%;
+    height: 56.25vw;
+    font-family: gotham book;
+
+    /* 定位裡面的intro-block */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .sm-header section h3 span, .bottom-content h3 span{
+    display: block;
+    margin-left: 0px;
+    margin-top: 1rem;
+    font-size: 14pt;
+    color: #999;
+  }
+  .sm-header-content{
+    position: absolute;
+    text-align: center;
+  }
+  .sm-header-content .underlined-btn a{
     color: #000;
+  }
+  .sm-header-content .underlined-btn .underline{
+    border-bottom: 1.5px solid #000;
   }
   .work-content h2{
     line-height: 1.5;
-  }
-  .arrow{
-    background: none;
-    box-shadow: none;
-    bottom: 10vh;
-  }
-  .arrow::after{
-    width: 3.5rem;
-    height: 3.5rem;
-  }
-  @keyframes arrowMove {
-    50%  {transform: translate(0px, 3vh);}
   }
   .skill-block{
     width: 90%;
@@ -1143,17 +1129,15 @@ ul{
   .bottom-content h3{
     font-size: 32pt;
   }
-  .bottom-content h3 span{
-    margin-left: 0px;
-    margin-top: 1rem;
-    display: block;
-    font-size: 14pt;
-  }
   .bottom-content section h4{
     display: block;
     float: none;
     margin-top: 1rem;
     font-size: 14pt;
+  }
+  .up-down-moved{
+    transform: translateY(0px);
+    opacity: 1;
   }
 }
 /* medium */
