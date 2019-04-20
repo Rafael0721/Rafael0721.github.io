@@ -16,6 +16,10 @@
     url('font/Gotham-Book.otf'); /* IE */
 }
 
+html{
+  overflow: hidden;
+}
+
 body{
   /* user-select: none; 讓使用者無法反白 (google chrome)*/
   user-select: none;
@@ -1017,5 +1021,5 @@ ul{
 }
 /* medium */
 @media screen and (min-device-width: 992px) and (max-device-width: 1200px){
-  
+
 }
