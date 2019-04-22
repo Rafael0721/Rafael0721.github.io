@@ -350,30 +350,24 @@ ul{
   margin-left: 10%;
 }
 
+.skill-underline20, .skill-underline40, .skill-underline60, .skill-underline80, .skill-underline100{
+  margin-top: 5px;
+  border-bottom: 5px solid #000;
+}
 .skill-underline20{
   width: 20%;
-  margin-top: 5px;
-  border-bottom: 1px solid #000;
 }
 .skill-underline40{
   width: 40%;
-  margin-top: 5px;
-  border-bottom: 1px solid #000;
 }
 .skill-underline60{
   width: 60%;
-  margin-top: 5px;
-  border-bottom: 1px solid #000;
 }
 .skill-underline80{
   width: 80%;
-  margin-top: 5px;
-  border-bottom: 1px solid #000;
 }
 .skill-underline100{
   width: 100%;
-  margin-top: 5px;
-  border-bottom: 1px solid #000;
 }
 
 .parallax-block{
