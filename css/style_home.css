@@ -442,35 +442,35 @@ ul{
   line-height: 0;
 }
 
-.event-left h3:nth-child(1), .event-left h3:nth-child(10){
+.event-left h3:nth-child(1), .event-left h3:nth-child(11){
   margin-top: 15px;
 }
-.event-left h3:nth-child(2), .event-left h3:nth-child(11){
+.event-left h3:nth-child(2), .event-left h3:nth-child(12){
   margin-top: 130px;
 }
-.event-left h3:nth-child(3), .event-left h3:nth-child(12){
+.event-left h3:nth-child(3), .event-left h3:nth-child(13){
   /* 點與點距離為50px 再加上點本身的直徑30px 故為80px */
   margin-top: 80px;
 }
-.event-left h3:nth-child(4), .event-left h3:nth-child(13){
+.event-left h3:nth-child(4), .event-left h3:nth-child(14){
   margin-top: 80px;
 }
-.event-left h3:nth-child(5), .event-left h3:nth-child(14){
+.event-left h3:nth-child(5), .event-left h3:nth-child(15){
   margin-top: 50px;
 }
-.event-left h3:nth-child(6), .event-left h3:nth-child(15){
+.event-left h3:nth-child(6), .event-left h3:nth-child(16){
   margin-top: 30px;
 }
-.event-left h3:nth-child(7), .event-left h3:nth-child(16){
+.event-left h3:nth-child(7), .event-left h3:nth-child(17){
   margin-top: 30px;
 }
-.event-left h3:nth-child(8), .event-left h3:nth-child(17){
+.event-left h3:nth-child(8), .event-left h3:nth-child(18){
   margin-top: 50px;
 }
-.event-left h3:nth-child(9), .event-left h3:nth-child(18){
+.event-left h3:nth-child(9), .event-left h3:nth-child(19){
   margin-top: 80px;
 }
-.event-left h3:nth-child(10), .event-left h3:nth-child(19){
+.event-left h3:nth-child(10), .event-left h3:nth-child(20){
   margin-top: 130px;
 }
 
