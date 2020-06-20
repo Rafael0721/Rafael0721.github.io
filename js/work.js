@@ -57,7 +57,7 @@ function dotSelect(){
 
 
 // scrolling 事件
-var workBoxes = document.getElementsByClassName("workBox");
+var workBoxes = document.querySelectorAll('.workBox');
 window.addEventListener("scroll", checkBox);
 
 function checkBox(){
@@ -75,7 +75,39 @@ function checkBox(){
   }
 }
 
-//mailButton
+// 3D transformation
+for(item of workBoxes){
+  let imgBox = item.children[0];
+  imgBox.addEventListener('mousemove', () => {
+    let divX = imgBox.offsetLeft;
+    let divY = imgBox.offsetTop;
+    let width = imgBox.offsetWidth;
+    let height = imgBox.offsetHeight;
+
+    let currentX = window.pageXOffset + window.event.clientX;
+    let currentY = window.pageYOffset + window.event.clientY;
+
+    let resultX = remap(divX, divX + width, -3, 3, currentX);
+    let resultY = remap(divY, divY + height, -3, 3, currentY);
+
+    imgBox.style.transform = `perspective(300px) rotateX(${resultX}deg) rotateY(${resultY}deg)`;
+  });
+
+  item.addEventListener('mouseout', () => {
+    imgBox.style.transform = `perspective(300px) rotateX(0deg) rotateY(0deg)`;
+  });
+}
+
+let remap = (init1, end1, init2, end2, num) => {
+  let domain1 = end1 - init1;
+  let domain2 = end2 - init2;
+
+  let ratio = domain2 / domain1;
+
+  return init2 + ((num-init1)*ratio);
+}
+
+// mailButton
 document.getElementById('mailPage').addEventListener("click", openMail);
 function openMail(){
   window.open("mailto:ytchen0721@gmail.com", "Rafael's mail");

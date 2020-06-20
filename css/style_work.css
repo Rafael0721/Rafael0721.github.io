@@ -260,6 +260,9 @@ header .underline{
   height: 0;
   /* 用padding-bottom來做出高度(隨寬度保持比例) */
   overflow: hidden;
+
+  will-change: transform;
+  transform: perspective(300px) rotateX(0deg) rotateY(0deg);
 }
 .img-box-flat{
   /* 16:9 */
