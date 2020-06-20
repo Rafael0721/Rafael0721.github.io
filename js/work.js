@@ -79,6 +79,7 @@ function checkBox(){
 for(item of workBoxes){
   let imgBox = item.children[0];
   imgBox.addEventListener('mousemove', () => {
+    imgBox.style.transition = ``;
     let divX = imgBox.offsetLeft;
     let divY = imgBox.offsetTop;
     let width = imgBox.offsetWidth;
@@ -95,6 +96,7 @@ for(item of workBoxes){
 
   item.addEventListener('mouseout', () => {
     imgBox.style.transform = `perspective(300px) rotateX(0deg) rotateY(0deg)`;
+    imgBox.style.transition = `all 0.35s ease-out`;
   });
 }
 
