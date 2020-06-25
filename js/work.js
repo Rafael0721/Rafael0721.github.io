@@ -88,8 +88,8 @@ for(item of workBoxes){
     let currentX = window.pageXOffset + window.event.clientX;
     let currentY = window.pageYOffset + window.event.clientY;
 
-    let resultX = remap(divX, divX + width, -3, 3, currentX);
-    let resultY = remap(divY, divY + height, -3, 3, currentY);
+    let resultX = remap(divY, divY + height, -2, 2, currentY);
+    let resultY = remap(divX, divX + width, 2, -2, currentX);
 
     imgBox.style.transform = `perspective(300px) rotateX(${resultX}deg) rotateY(${resultY}deg)`;
   });
