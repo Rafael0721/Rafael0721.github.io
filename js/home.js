@@ -125,8 +125,6 @@ window.addEventListener("scroll", function(){
   }
 });
 
-
-
 // top-img clock automatic img change
 var imgSet = document.getElementsByClassName('img');
 
