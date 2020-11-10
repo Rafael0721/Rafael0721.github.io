@@ -278,18 +278,21 @@ header .underline{
 }
 
 .img-box-flat:hover img{
+  filter: blur(1px);
   transform: scale(1.1);
 }
 .img-box-flat:hover .img-cover{
   opacity: 1;
 }
 .img-box-long:hover img{
+  filter: blur(1px);
   transform: scale(1.1);
 }
 .img-box-long:hover .img-cover{
   opacity: 1;
 }
 .img-box-square:hover img{
+  filter: blur(1px);
   transform: scale(1.1);
 }
 .img-box-square:hover .img-cover{
