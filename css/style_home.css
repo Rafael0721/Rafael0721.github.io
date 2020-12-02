@@ -547,10 +547,10 @@ ul{
   line-height: 0;
 }
 .event-right h3:nth-child(1), .event-right h3:nth-child(3){
-  margin-top: 50px;
+  margin-top: 150px;
 }
 .event-right h3:nth-child(2), .event-right h3:nth-child(4){
-  margin-top: 375px;
+  margin-top: 275px;
 }
 
 .timeline{
