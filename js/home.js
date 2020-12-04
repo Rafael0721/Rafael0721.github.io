@@ -1,14 +1,29 @@
 // opening animation
 var preload = document.getElementById("preload");
-var cover = document.getElementById("squareCover");
+var html = document.querySelector("html");
+// var cover = document.getElementById("squareCover");
+var slideBall = document.querySelector("#face-ball");
+var sliderFace = document.querySelector("#slider-face");
+html.classList.add("stop-scrolling");
+// setTimeout(function(){
+//   cover.classList.add("cover-move1");
+// }, 100);
+// setTimeout(function(){
+//   cover.classList.add("cover-move2");
+// }, 1500);
 setTimeout(function(){
-  cover.classList.add("cover-move1");
-}, 100);
+  slideBall.classList.add("cover-move1");
+  sliderFace.style.transform = "scale(0.5)";
+  document.styleSheets[0].addRule('.rectangle-slide::after', 'width: 150px');
+}, 500);
 setTimeout(function(){
-  cover.classList.add("cover-move2");
-}, 1500);
+  slideBall.classList.add("cover-move2");
+  sliderFace.style.transform = "scale(1)";
+  document.styleSheets[0].addRule('.rectangle-slide::after', 'width: 500px');
+}, 2000);
 setTimeout(function(){
   preload.style.opacity = "0";
+  html.classList.remove("stop-scrolling");
 }, 2800);
 setTimeout(function(){
   preload.style.display = "none";
