@@ -1,3 +1,11 @@
+// setting footer information
+let fbTag = document.querySelector('#fb-tag');
+let igTag = document.querySelector('#ig-tag');
+let copyRightText = document.querySelector('#copy-right-text');
+fbTag.href = 'https://www.facebook.com/rafa0721';
+igTag.href = 'https://www.instagram.com/rafael_chen_yt/';
+copyRightText.textContent = '© Rafael Chen 2020. All Rights Reserved.';
+
 
 var imgSet = document.getElementsByClassName('img');
     dotSet = document.getElementsByClassName('dot');
