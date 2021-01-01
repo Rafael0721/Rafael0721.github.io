@@ -33,9 +33,13 @@ setTimeout(function(){
 let fbTag = document.querySelector('#fb-tag');
 let igTag = document.querySelector('#ig-tag');
 let copyRightText = document.querySelector('#copy-right-text');
-fbTag.href = 'https://www.facebook.com/rafa0721';
-igTag.href = 'https://www.instagram.com/rafael_chen_yt/';
-copyRightText.textContent = '© Rafael Chen 2020. All Rights Reserved.';
+let fbLink = 'https://www.facebook.com/rafa0721';
+let igLink = 'https://www.instagram.com/rafael_chen_yt/';
+let footerText = '© Rafael Chen 2021. All Rights Reserved.';
+
+fbTag.href = fbLink;
+igTag.href = igLink;
+copyRightText.textContent = footerText;
 
 // tag animation
 var about = document.getElementById('tag_about');
