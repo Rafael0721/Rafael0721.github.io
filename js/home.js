@@ -55,32 +55,59 @@ function back(){
   }
 }
 
+
+// for(var tag of sideTags){
+//   var blockName = tag.dataset.block;
+//   tag.addEventListener("click", () => {
+//
+//     console.log(tag);
+//
+//     $("html,body").animate({scrollTop: $(blockName).offset().top}, 1000);
+//
+//     setTimeout(function(){
+//       back();
+//       tag.classList.add("tag-moved");
+//     }, 100);
+//   });
+// }
+
 about.addEventListener("click", function(){
+  // console.log(about.dataset.block);
   // 設置一點點timeout 才不會和滾動的tag事件衝突
+  var blockName = about.dataset.block;
+  $("html,body").animate({scrollTop: $(blockName).offset().top}, 1000);
   setTimeout(function(){
     back();
     about.classList.add("tag-moved");
   }, 100);
 });
 work.addEventListener("click", function(){
+  var blockName = work.dataset.block;
+  $("html,body").animate({scrollTop: $(blockName).offset().top}, 1000);
   setTimeout(function(){
     back();
     work.classList.add("tag-moved");
   }, 100);
 });
 skill.addEventListener("click", function(){
+  var blockName = skill.dataset.block;
+  $("html,body").animate({scrollTop: $(blockName).offset().top}, 1000);
   setTimeout(function(){
     back();
     skill.classList.add("tag-moved");
   }, 100);
 });
 edu.addEventListener("click", function(){
+  var blockName = edu.dataset.block;
+  $("html,body").animate({scrollTop: $(blockName).offset().top}, 1000);
   setTimeout(function(){
     back();
     edu.classList.add("tag-moved");
   }, 100);
 });
 contact.addEventListener("click", function(){
+  var blockName = contact.dataset.block;
+  $("html,body").animate({scrollTop: $(blockName).offset().top}, 1000);
   setTimeout(function(){
     back();
     contact.classList.add("tag-moved");
