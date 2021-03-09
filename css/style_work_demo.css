@@ -97,6 +97,7 @@ header h3 span{
   display: inline-block;
   cursor: pointer;
   margin-left: 20px;
+  font-family: gotham bold;
 }
 
 .underlined-btn h3 a, .underlined-btn h4 a{
