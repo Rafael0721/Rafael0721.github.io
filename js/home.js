@@ -35,7 +35,7 @@ let igTag = document.querySelector('#ig-tag');
 let copyRightText = document.querySelector('#copy-right-text');
 let fbLink = 'https://www.facebook.com/rafa0721';
 let igLink = 'https://www.instagram.com/rafael_chen_yt/';
-let footerText = '© Rafael Chen 2021. All Rights Reserved.';
+let footerText = `© Rafael Chen ${new Date().getFullYear()}. All Rights Reserved.`;
 
 fbTag.href = fbLink;
 igTag.href = igLink;

@@ -598,39 +598,42 @@ ul{
 }
 
 /* 左邊第一行  margin-top: 15px 對準圓點中心*/
-.event-left h3:nth-child(1), .event-left h3:nth-child(12){
+.event-left h3:nth-child(1), .event-left h3:nth-child(13){
   margin-top: 15px;
 }
 /* 接下來short距離為80px long距離為130px 以此類推 */
-.event-left h3:nth-child(2), .event-left h3:nth-child(13){
-  margin-top: 80px;
-}
-.event-left h3:nth-child(3), .event-left h3:nth-child(14){
-  /* 點與點距離為50px 再加上點本身的直徑30px 故為80px */
+.event-left h3:nth-child(2), .event-left h3:nth-child(14){
   margin-top: 130px;
 }
-.event-left h3:nth-child(4), .event-left h3:nth-child(15){
+.event-left h3:nth-child(3), .event-left h3:nth-child(15){
+  /* 點與點距離為50px 再加上點本身的直徑30px 故為80px */
   margin-top: 80px;
 }
-.event-left h3:nth-child(5), .event-left h3:nth-child(16){
+.event-left h3:nth-child(4), .event-left h3:nth-child(16){
+  margin-top: 130px;
+}
+.event-left h3:nth-child(5), .event-left h3:nth-child(17){
   margin-top: 50px;
 }
-.event-left h3:nth-child(6), .event-left h3:nth-child(17){
+.event-left h3:nth-child(6), .event-left h3:nth-child(18){
   margin-top: 30px;
 }
-.event-left h3:nth-child(7), .event-left h3:nth-child(18){
+.event-left h3:nth-child(7), .event-left h3:nth-child(19){
   margin-top: 30px;
 }
-.event-left h3:nth-child(8), .event-left h3:nth-child(19){
+.event-left h3:nth-child(8), .event-left h3:nth-child(20){
   margin-top: 50px;
 }
-.event-left h3:nth-child(9), .event-left h3:nth-child(20){
+.event-left h3:nth-child(9), .event-left h3:nth-child(21){
   margin-top: 80px;
 }
-.event-left h3:nth-child(10), .event-left h3:nth-child(21){
+.event-left h3:nth-child(10), .event-left h3:nth-child(22){
   margin-top: 80px;
 }
-.event-left h3:nth-child(11), .event-left h3:nth-child(22){
+.event-left h3:nth-child(11), .event-left h3:nth-child(23){
+  margin-top: 80px;
+}
+.event-left h3:nth-child(12), .event-left h3:nth-child(24){
   margin-top: 130px;
 }
 
@@ -642,11 +645,14 @@ ul{
   margin-left: 120px;
   line-height: 0;
 }
-.event-right h3:nth-child(1), .event-right h3:nth-child(3){
-  margin-top: 150px;
+.event-right h3:nth-child(1), .event-right h3:nth-child(4){
+  margin-top: 15px;
 }
-.event-right h3:nth-child(2), .event-right h3:nth-child(4){
-  margin-top: 275px;
+.event-right h3:nth-child(2), .event-right h3:nth-child(5){
+  margin-top: 270px;
+}
+.event-right h3:nth-child(3), .event-right h3:nth-child(6){
+  margin-top: 190px;
 }
 
 .timeline{
@@ -655,7 +661,7 @@ ul{
   margin-top: 5rem;
   margin-left: -1.5px;
   width: 3px;
-  height: 770px;
+  height: 900px;
   border-left: 3px dashed #666;
 }
 .timeline-point{
