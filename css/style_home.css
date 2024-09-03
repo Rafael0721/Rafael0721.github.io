@@ -308,6 +308,26 @@ ul{
   100% {transform: translate(0px, 0px);}
 }
 
+@keyframes rotate-clockwise {
+  0% { transform: var(--initial-transform) rotate(0deg) scale(1); }
+  50% { transform: var(--initial-transform) rotate(180deg) scale(1.1); }
+  100% { transform: var(--initial-transform) rotate(360deg) scale(1); }
+}
+
+@keyframes rotate-counterclockwise {
+  0% { transform: var(--initial-transform) rotate(0deg) scale(1.1); }
+  50% { transform: var(--initial-transform) rotate(-180deg) scale(1); }
+  100% { transform: var(--initial-transform) rotate(-360deg) scale(1.1); }
+}
+
+.rotate-clockwise {
+  animation: rotate-clockwise 60s linear infinite;
+}
+
+.rotate-counterclockwise {
+  animation: rotate-counterclockwise 45s linear infinite;
+}
+
 .logo-for-sm{
   display: none;
 }
@@ -335,13 +355,25 @@ ul{
 }
 
 .header-intro-block .img-div svg{
+  --initial-transform: translateX(-50%) translateY(-50%);
+  position: absolute;
+  width: 620px;
+  height: 620px;
+  left: 50%;
+  top: 50%;
+  /* transform: translateX(-50%) translateY(-50%); */
+  transform: var(--initial-transform) rotate(0deg);
+  opacity: .2;
+  /* animation: rotate-clockwise 30s linear infinite; */
+}
+
+.rotate-container {
   position: absolute;
   width: 620px;
   height: 620px;
   left: 50%;
   top: 50%;
   transform: translateX(-50%) translateY(-50%);
-  opacity: .2;
 }
 
 .header-title{
