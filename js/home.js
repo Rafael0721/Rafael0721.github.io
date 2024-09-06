@@ -30,13 +30,16 @@ setTimeout(function(){
 }, 3500);
 
 // setting footer information
+let linkedinTag = document.querySelector('#linkedin-tag');
 let fbTag = document.querySelector('#fb-tag');
 let igTag = document.querySelector('#ig-tag');
 let copyRightText = document.querySelector('#copy-right-text');
+let linkedinLink = 'https://www.linkedin.com/in/rafael-chen-6b43b0151';
 let fbLink = 'https://www.facebook.com/rafa0721';
 let igLink = 'https://www.instagram.com/rafael_chen_yt/';
 let footerText = `© Rafael Chen ${new Date().getFullYear()}. All Rights Reserved.`;
 
+linkedinTag.href = linkedinLink;
 fbTag.href = fbLink;
 igTag.href = igLink;
 copyRightText.textContent = footerText;
@@ -216,3 +219,74 @@ document.getElementById('mailPage').addEventListener("click", openMail);
 function openMail(){
   window.open("mailto:ytchen0721@gmail.com", "Rafael's mail");
 }
+
+const canvas = document.getElementById('patternCanvas');
+    const ctx = canvas.getContext('2d');
+
+    // 设置 canvas 为全屏
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      ctx.translate(canvas.width / 2, canvas.height / 2); // 将画布的中心作为原点
+
+      ctx.globalAlpha = 0.5;
+      ctx.lineWidth = 0.5;
+      ctx.strokeStyle = 'rgba(0, 0, 0, 0.5)';
+      ctx.globalAlpha = 0.5; // 設定全局透明度
+    }
+
+    resizeCanvas(); // 初次调用以设置画布大小
+    window.addEventListener('resize', resizeCanvas); // 当窗口大小变化时，自动调整画布大小
+
+    ctx.lineWidth = 0.5; // 线条宽度
+    ctx.strokeStyle = 'rgba(0, 0, 0, 0.2)'; // 线条颜色与透明度
+
+    let frame = 0; // 帧计数器
+
+    // 动态曲线变化函数
+    function drawDynamicCurves() {
+      const numShapes = 300; // 曲线数量
+      const radiusIncrement = 6; // 增加每层半径的递增量
+      let radius = 100; // 初始半径
+      let angleStep = Math.PI / 100; // 每层旋转的步进角度
+
+      for (let i = 0; i < numShapes; i++) {
+        ctx.beginPath();
+
+        // 设置曲线的控制点
+        for (let t = 0; t < Math.PI * 2; t += 0.1) {
+          // 控制点的 x 和 y 随 frame 和 t 变化
+          let x = Math.cos(t) * radius * (1 + 0.3 * Math.sin(t * 5 + frame * 0.01));
+          let y = Math.sin(t) * radius * (1 + 0.3 * Math.cos(t * 3 + frame * 0.01));
+
+          if (t === 0) {
+            ctx.moveTo(x, y); // 移动到起点
+          } else {
+            ctx.lineTo(x, y); // 连接到下一个点
+          }
+        }
+
+        // 绘制曲线并关闭路径
+        ctx.stroke();
+        ctx.closePath();
+
+        radius += radiusIncrement; // 增加半径形成递进效果
+      }
+
+      frame++; // 增加帧计数器，使曲线随时间变化
+    }
+
+    // 动画函数
+    function animate() {
+      ctx.clearRect(-canvas.width / 2, -canvas.height / 2, canvas.width, canvas.height); // 清除画布
+
+      ctx.globalAlpha = 0.5; 
+      drawDynamicCurves(); // 调用绘制曲线函数
+
+      requestAnimationFrame(animate); // 持续调用动画
+    }
+
+    window.addEventListener('resize', resizeCanvas);
+
+    // 执行动画
+    animate();

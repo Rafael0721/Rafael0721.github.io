@@ -1,11 +1,14 @@
 // setting footer information
+// let linkedinTag = document.querySelector('#linkedin-tag');
 let fbTag = document.querySelector('#fb-tag');
 let igTag = document.querySelector('#ig-tag');
 let copyRightText = document.querySelector('#copy-right-text');
+// let linkedinLink = 'https://www.linkedin.com/in/rafael-chen-6b43b0151';
 let fbLink = 'https://www.facebook.com/rafa0721';
 let igLink = 'https://www.instagram.com/rafael_chen_yt/';
-let footerText = '© Rafael Chen 2021. All Rights Reserved.';
+let footerText = `© Rafael Chen ${new Date().getFullYear()}. All Rights Reserved.`;
 
+// linkedinTag.href = linkedinLink;
 fbTag.href = fbLink;
 igTag.href = igLink;
 copyRightText.textContent = footerText;
