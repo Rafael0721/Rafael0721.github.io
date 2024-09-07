@@ -94,6 +94,26 @@ header .underline{
   top: 9pt;
 }
 
+.to-be-continued {
+  position: relative;
+}
+
+.to-be-continued::before {
+  position: absolute;
+  content: 'To Be Continued...';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .7);
+  left: 0;
+  top: 0;
+  z-index: 10;
+}
+
 .top-img-block{
   position: relative;
   width: 90%;
