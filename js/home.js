@@ -231,7 +231,7 @@ const canvas = document.getElementById('patternCanvas');
 
       ctx.globalAlpha = 0.5;
       ctx.lineWidth = 0.5;
-      ctx.strokeStyle = 'rgba(0, 0, 0, 0.5)';
+      ctx.strokeStyle = 'rgba(0, 0, 0, 0.4)';
       ctx.globalAlpha = 0.5; // 設定全局透明度
     }
 
@@ -239,7 +239,7 @@ const canvas = document.getElementById('patternCanvas');
     window.addEventListener('resize', resizeCanvas); // 当窗口大小变化时，自动调整画布大小
 
     ctx.lineWidth = 0.5; // 线条宽度
-    ctx.strokeStyle = 'rgba(0, 0, 0, 0.2)'; // 线条颜色与透明度
+    ctx.strokeStyle = 'rgba(0, 0, 0, 0.4)'; // 线条颜色与透明度
 
     let frame = 0; // 帧计数器
 
