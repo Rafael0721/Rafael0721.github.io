@@ -284,7 +284,7 @@ ul{
   justify-content: center;
 }
 
-canvas {
+#patternCanvas {
   position: absolute;
   top: 0;
   left: 0;
@@ -334,6 +334,124 @@ canvas {
   100% { transform: var(--initial-transform) rotate(-360deg) scale(1); }
 }
 
+/* NEW: generative canvas behind avatar */
+#avatarCanvas{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;         /* 視覺尺寸（可調：520~650） */
+  height: 600px;
+  z-index: -1;          /* 在頭像 img 後面，但仍在 .img-div 裡 */
+  opacity: 0.8;        /* 整體淡一點 */
+  border-radius: 999em; /* 圓形視覺 */
+  filter: blur(0.2px);  /* 很輕微的柔化，讓線更像“霧化” */
+  /* pointer-events: none; */
+  /* background: rgba(255,0,0,0.08); */
+  background: transparent;
+}
+
+.avatar-tag {
+  position: absolute;
+  z-index: 3;
+  /* background-color: #fff; */
+  background: rgba(255,255,255,0.35);
+  backdrop-filter: blur(5px);
+  padding: 10px 20px;
+  border-radius: 99em;
+  /* box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.1); */
+  box-shadow:
+    0 8px 24px rgba(120,180,220,0.18),
+    0 2px 8px rgba(120,180,220,0.12);
+}
+
+.avatar-tag::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-color: transparent transparent transparent rgba(255,255,255,0.35);
+}
+
+.avatar-tag:nth-child(1) {
+  left: -200px;
+  top: -80px;
+  /* animation-delay: 0s; */
+  animation: floatTag1 8s ease-in-out infinite;
+}
+
+.avatar-tag:nth-child(1)::after {
+  right: 0px;
+  bottom: -6px;
+  transform: rotate(50deg);
+  border-width: 8px 0 8px 10px;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+  /* 用 mask 在靠本體那側做個淡掉 */
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 25%, black 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 25%, black 100%);
+}
+
+.avatar-tag:nth-child(2) {
+  top: 130px;
+  left: -300px;
+  /* animation-delay: 2.5s; */
+  animation: floatTag2 8s ease-in-out infinite;
+}
+
+.avatar-tag:nth-child(2)::after {
+  right: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 8px 0 8px 12px;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+  /* 用 mask 在靠本體那側做個淡掉 */
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 25%, black 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 25%, black 100%);
+}
+
+.avatar-tag:nth-child(3) {
+  left: -200px;
+  top: 350px;
+  /* animation-delay: 5s; */
+  animation: floatTag3 8s ease-in-out infinite;
+}
+
+.avatar-tag:nth-child(3)::after {
+  right: -1px;
+  top: -5px;
+  transform: rotate(-45deg);
+  border-width: 8px 0 8px 10px;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+  /* 用 mask 在靠本體那側做個淡掉 */
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 25%, black 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 25%, black 100%);
+}
+
+@keyframes floatTag1 {
+  0%   { transform: translate(0, 0); }
+  25%  { transform: translate(10px, -8px); }
+  50%  { transform: translate(0px, -8px); }
+  75%  { transform: translate(-10px, -4px); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes floatTag2 {
+  0%   { transform: translate(0, 0); }
+  25%  { transform: translate(-10px, 8px); }
+  50%  { transform: translate(0px, 8px); }
+  75%  { transform: translate(10px, 4px); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes floatTag3 {
+  0%   { transform: translate(0, 0); }
+  25%  { transform: translate(5px, -10px); }
+  50%  { transform: translate(-5px, -2px); }
+  75%  { transform: translate(-10px, -8px); }
+  100% { transform: translate(0, 0); }
+}
+
 .rotate-clockwise {
   animation: rotate-clockwise 60s linear infinite;
 }
@@ -358,7 +476,9 @@ canvas {
 
 .header-intro-block .img-div{
   position: relative;
-  margin-right: 7rem;
+  margin-right: 9rem;
+  margin-top: calc(20px + 1rem);
+  z-index: 0; /* 建立 stacking context */
 }
 
 .header-intro-block .img-div img{
@@ -366,6 +486,7 @@ canvas {
   width: 300px;
   height: 300px;
   border-radius: 99em;
+  z-index: 2;
 }
 
 .header-intro-block .img-div img:hover{
@@ -383,7 +504,8 @@ canvas {
   top: 50%;
   /* transform: translateX(-50%) translateY(-50%); */
   transform: var(--initial-transform) rotate(0deg);
-  opacity: .2;
+  opacity: .55;
+  z-index: -2;
   /* animation: rotate-clockwise 30s linear infinite; */
 }
 
@@ -391,7 +513,7 @@ canvas {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 
 .header-intro-block .career-map img {
@@ -429,6 +551,26 @@ canvas {
 
 .header-intro-block .underlined-btn:hover a{
   color: #999;
+}
+
+.experience-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.experience-item {
+  margin-right: 1rem;
+  width: 9rem;
+}
+
+.experience-item h2 {
+  margin-bottom: .5rem;
+}
+
+.experience-item h3 {
+  line-height: 1.35;
 }
 
 .about-block{
@@ -701,42 +843,52 @@ canvas {
 }
 
 /* 左邊第一行  margin-top: 15px 對準圓點中心*/
-.event-left h3:nth-child(1), .event-left h3:nth-child(13){
+.event-left h3:nth-child(1), .event-left h3:nth-child(15){
   margin-top: 15px;
 }
-/* 接下來short距離為80px long距離為130px 以此類推 */
-.event-left h3:nth-child(2), .event-left h3:nth-child(14){
-  margin-top: 130px;
-}
-.event-left h3:nth-child(3), .event-left h3:nth-child(15){
+
+.event-left h3:nth-child(2), .event-left h3:nth-child(16){
   /* 點與點距離為50px 再加上點本身的直徑30px 故為80px */
   margin-top: 80px;
 }
-.event-left h3:nth-child(4), .event-left h3:nth-child(16){
+
+/* 接下來short距離為80px long距離為130px 以此類推 */
+.event-left h3:nth-child(3), .event-left h3:nth-child(17){
+  margin-top: 80px;
+}
+
+.event-left h3:nth-child(4), .event-left h3:nth-child(18){
   margin-top: 130px;
 }
-.event-left h3:nth-child(5), .event-left h3:nth-child(17){
+.event-left h3:nth-child(5), .event-left h3:nth-child(19){
+  /* 點與點距離為50px 再加上點本身的直徑30px 故為80px */
+  margin-top: 80px;
+}
+.event-left h3:nth-child(6), .event-left h3:nth-child(20){
+  margin-top: 130px;
+}
+.event-left h3:nth-child(7), .event-left h3:nth-child(21){
   margin-top: 50px;
 }
-.event-left h3:nth-child(6), .event-left h3:nth-child(18){
+.event-left h3:nth-child(8), .event-left h3:nth-child(22){
   margin-top: 30px;
 }
-.event-left h3:nth-child(7), .event-left h3:nth-child(19){
+.event-left h3:nth-child(9), .event-left h3:nth-child(23){
   margin-top: 30px;
 }
-.event-left h3:nth-child(8), .event-left h3:nth-child(20){
+.event-left h3:nth-child(10), .event-left h3:nth-child(24){
   margin-top: 50px;
 }
-.event-left h3:nth-child(9), .event-left h3:nth-child(21){
+.event-left h3:nth-child(11), .event-left h3:nth-child(25){
   margin-top: 80px;
 }
-.event-left h3:nth-child(10), .event-left h3:nth-child(22){
+.event-left h3:nth-child(12), .event-left h3:nth-child(26){
   margin-top: 80px;
 }
-.event-left h3:nth-child(11), .event-left h3:nth-child(23){
+.event-left h3:nth-child(13), .event-left h3:nth-child(27){
   margin-top: 80px;
 }
-.event-left h3:nth-child(12), .event-left h3:nth-child(24){
+.event-left h3:nth-child(14), .event-left h3:nth-child(28){
   margin-top: 130px;
 }
 
@@ -749,10 +901,11 @@ canvas {
   line-height: 0;
 }
 .event-right h3:nth-child(1), .event-right h3:nth-child(4){
-  margin-top: 15px;
+  /* 95px = 15px + 80px */
+  margin-top: 95px;
 }
 .event-right h3:nth-child(2), .event-right h3:nth-child(5){
-  margin-top: 270px;
+  margin-top: 350px;
 }
 .event-right h3:nth-child(3), .event-right h3:nth-child(6){
   margin-top: 190px;
@@ -764,7 +917,7 @@ canvas {
   margin-top: 5rem;
   margin-left: -1.5px;
   width: 3px;
-  height: 900px;
+  height: 1060px;
   border-left: 3px dashed #666;
 }
 .timeline-point{
@@ -1021,11 +1174,31 @@ canvas {
   h1{
     font-size: 42pt;
   }
+  h2{
+    font-size: 26pt;
+  }
+  h3{
+    font-size: 12pt;
+  }
   .normal-length{
     display: none;
   }
   .short-length{
     display: block;
+  }
+  .header-intro-block .img-div{
+    margin-right: 3.5rem;
+  }
+  /* #avatarCanvas {
+    width: 350px;
+    height: 350px;
+  } */
+  /* #avatarPhoto {
+    width: 200px;
+    height: 200px;
+  } */
+  .avatar-tag {
+    display: none;
   }
 }
 
@@ -1066,6 +1239,23 @@ canvas {
   .header-intro-block .img-div svg{
     width: 1000px;
     height: 1000px;
+  }
+
+  .header-content {
+    display: none;
+  }
+
+  .experience-section {
+    margin-top: 3rem;
+  }
+
+  .experience-item {
+    width: 12rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 3rem;
   }
 
   .sm-header{
