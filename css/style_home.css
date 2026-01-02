@@ -1189,19 +1189,51 @@ ul{
   .header-intro-block .img-div{
     margin-right: 3.5rem;
   }
-  /* #avatarCanvas {
-    width: 350px;
-    height: 350px;
-  } */
-  /* #avatarPhoto {
-    width: 200px;
-    height: 200px;
-  } */
   .avatar-tag {
     display: none;
   }
+  /* .header-intro-block {
+    margin-left: 3rem;
+  } */
+  .text-div {
+    /* margin-left: 2rem; */
+    z-index: 99;
+  }
 }
 
+@media screen and (min-width: 1200px) and (max-width: 1500px){
+  h1{
+    font-size: 42pt;
+  }
+  h2{
+    font-size: 26pt;
+  }
+  h3{
+    font-size: 12pt;
+  }
+  .header-intro-block .img-div{
+    margin-right: 3.5rem;
+  }
+  .avatar-tag:nth-child(2) {
+    top: -50px;
+    left: 300px;
+    line-height: 1.35;
+  }
+  
+  .avatar-tag:nth-child(2)::after {
+    left: -9px;
+    top: 50%;
+    transform:  rotate(165deg);
+    border-width: 8px 0 8px 12px;
+  }
+  .header-intro-block {
+    margin-left: 3rem;
+  }
+  .text-div {
+    margin-left: 2rem;
+    z-index: 99;
+  }
+}
 
 
 
