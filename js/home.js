@@ -708,123 +708,50 @@ function initAvatarCanvas() {
 
 
   function drawHalo(t) {
-    // const { x: cx, y: cy } = center();
     const { x: cx, y: cy } = { x: avatarCX, y: avatarCY };
 
-    const rMid = _minWH * 0.272;   // 位置：貼照片外圈
-    const band = _minWH * 0.022;   // 厚度基準（稍微加粗一點）
-    const segN = 72;              // 分段多一點點（仍然很省）
+    const rMid = _minWH * 0.245;
+    const band = _minWH * 0.015;
 
-    // 呼吸（很慢）
-    const breathe = 0.75 + 0.25 * Math.sin(t * 0.55);
+    // ✅ 這個就是「整體亮度總開關」
+    const haloAlpha = 0.55; // 0~1：越小越淡（建議 0.35~0.70）
 
     avtctx.save();
     avtctx.globalCompositeOperation = 'source-over';
-    avtctx.shadowBlur = 0;
 
-    // 外層：更淡更粗，主要用來“撐厚薄”
-    strokeNoisyRing(cx, cy, rMid + band * 0.70, segN, t, {
-      width: band * 2.6,
-      baseAlpha: 0.10 * breathe,
-      jitterAmp: _minWH * 0.006,       // 半徑抖動（稍大）
-      alphaVar: 0.85,                   // 亮度斷續強度（越大越不均）
-      phase: 2.0,                       // 每層不同相位，堆出厚薄錯覺
-      color: 'rgba(220, 244, 255, 1)',
-    });
+    const glowOuter = rMid + band * 3.2;
+    const glowInner = rMid - band * 2.0;
 
-    // 中層：主光圈（最明顯）
-    strokeNoisyRing(cx, cy, rMid, segN, t, {
-      width: band * 1.55,
-      baseAlpha: 0.35 * breathe,        // 提高基礎亮度
-      jitterAmp: _minWH * 0.015,        // 抖動更明顯
-      alphaVar: 1.45,                   // 斷續更強
-      phase: 9.0,
-      color: 'rgba(235, 250, 255, 1)',
-    });
+    const g = avtctx.createRadialGradient(cx, cy, glowInner, cx, cy, glowOuter);
+    g.addColorStop(0.00, `rgba(255,255,255,${0.00 * haloAlpha})`);
+    g.addColorStop(0.45, `rgba(255,255,255,${0.35 * haloAlpha})`);
+    g.addColorStop(0.60, `rgba(255,255,255,${0.75 * haloAlpha})`);
+    g.addColorStop(0.78, `rgba(255,255,255,${0.30 * haloAlpha})`);
+    g.addColorStop(1.00, `rgba(255,255,255,${0.00 * haloAlpha})`);
 
-    // 內層：細亮線，讓光圈“銳利”
-    strokeNoisyRing(cx, cy, rMid - band * 0.70, segN, t, {
-      width: Math.max(1.3, band * 0.70),
-      baseAlpha: 5.0 * breathe,        // 內層更亮
-      jitterAmp: _minWH * 0.005,
-      alphaVar: 1.5,
-      phase: 17.0,
-      color: 'rgba(255, 255, 255, 1)',
-    });
+    avtctx.fillStyle = g;
+    avtctx.beginPath();
+    avtctx.arc(cx, cy, glowOuter, 0, Math.PI * 2);
+    avtctx.fill();
+
+    // 2) 銳利白邊
+    avtctx.globalAlpha = 0.35 * haloAlpha;
+    avtctx.lineWidth = Math.max(1.2, band * 0.15);
+    avtctx.strokeStyle = 'rgba(255,255,255,1)';
+    avtctx.beginPath();
+    avtctx.arc(cx, cy, rMid, 0, Math.PI * 2);
+    avtctx.stroke();
+
+    // 3) 內側細線
+    avtctx.globalAlpha = 0.25 * haloAlpha;
+    avtctx.lineWidth = Math.max(1.0, band * 0.05);
+    avtctx.strokeStyle = 'rgba(255,255,255,1)';
+    avtctx.beginPath();
+    avtctx.arc(cx, cy, rMid - band * 0.45, 0, Math.PI * 2);
+    avtctx.stroke();
 
     avtctx.restore();
   }
-
-
-  /**
-   * 用很多小線段畫一個 “不均勻” 的 ring
-   * strength: 不均勻程度
-   */
-  function strokeNoisyRing(cx, cy, rBase, segN, t, opt) {
-    const twoPi = Math.PI * 2;
-    const wob = t * 0.35; // 很慢
-
-    // 基本設定
-    const width = opt.width;
-    const baseAlpha = opt.baseAlpha;
-    const jitterAmp = opt.jitterAmp;
-    const alphaVar = opt.alphaVar;  // 亮度不均強度
-    const phase = opt.phase || 0;
-    const color = opt.color;
-
-    avtctx.strokeStyle = color;
-    avtctx.lineWidth = width;
-
-    // 分段 stroke：每段不同 alpha → 產生“厚薄不均”的視覺
-    // 每段大概 5 度～7 度，segN=72 時每段 5 度
-    for (let i = 0; i < segN; i++) {
-      const a0 = (i / segN) * twoPi;
-      const a1 = ((i + 1) / segN) * twoPi;
-
-      // 1) 讓輪廓有一點點不規則（半徑抖動）
-      const n0 = noise2D(Math.cos(a0) * 1.5 + phase, Math.sin(a0) * 1.5 + phase + wob);
-      const n1 = noise2D(Math.cos(a1) * 1.5 + phase, Math.sin(a1) * 1.5 + phase + wob);
-
-      const r0 = rBase + (n0 - 0.5) * 2 * jitterAmp;
-      const r1 = rBase + (n1 - 0.5) * 2 * jitterAmp;
-
-      const x0 = cx + Math.cos(a0) * r0;
-      const y0 = cy + Math.sin(a0) * r0;
-      const x1 = cx + Math.cos(a1) * r1;
-      const y1 = cy + Math.sin(a1) * r1;
-
-      // 2) 每段亮度不同（這是“厚薄/動態感”的關鍵）
-      // 用另一組 noise 決定 alpha
-      const na = noise2D(Math.cos((a0 + a1) * 0.5) * 2.2 + phase + 33.0,
-                        Math.sin((a0 + a1) * 0.5) * 2.2 + phase + 33.0 + t * 0.18);
-
-      // na ~ [0,1]，把它映射成比較戲劇化的亮暗差
-      const glow = Math.max(0, (na - 0.35)) ** 1.6; // 越大越“斷續”
-      const aSeg = baseAlpha * (0.35 + alphaVar * glow);
-
-      if (aSeg < 0.01) continue;
-
-      avtctx.globalAlpha = aSeg;
-
-      avtctx.beginPath();
-      avtctx.moveTo(x0, y0);
-
-      // 用二次貝茲讓段落更順（但很便宜）
-      const am = (a0 + a1) * 0.5;
-      const nm = noise2D(Math.cos(am) * 1.8 + phase + 99.0, Math.sin(am) * 1.8 + phase + 99.0 + wob);
-      const rm = rBase + (nm - 0.5) * 2 * jitterAmp;
-
-      const xm = cx + Math.cos(am) * rm;
-      const ym = cy + Math.sin(am) * rm;
-
-      avtctx.quadraticCurveTo(xm, ym, x1, y1);
-      avtctx.stroke();
-    }
-
-    // restore alpha（避免影響後面）
-    avtctx.globalAlpha = 1;
-  }
-
 
 
   // ----------------------------
@@ -1099,9 +1026,11 @@ function initAvatarCanvas() {
       rebuildGradients();
     }
 
-    if ((frame % 4) === 0) {
-      drawHalo(t);
-    }
+    // if ((frame % 100) === 0) {
+    //   drawHalo(t);
+    // }
+
+    drawHalo(t);
 
     // 用 fade 取代 clear
     fadeTrails();
